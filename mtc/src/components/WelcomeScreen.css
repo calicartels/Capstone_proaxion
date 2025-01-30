@@ -1,0 +1,24 @@
+.welcome-screen {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    text-align: center;
+  }
+  
+  .welcome-screen h1 {
+    margin: 200; /* Remove default margin */
+  }
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 5rem; /* Adjust the gap between buttons as needed */
+}
+
+.button-container button {
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  cursor: pointer;
+}
