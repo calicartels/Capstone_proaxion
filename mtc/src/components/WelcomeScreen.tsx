@@ -1,12 +1,18 @@
 import './WelcomeScreen.css';
 
-export default function WelcomeScreen() {
+interface WelcomeScreenProps {
+  onHomeClick: () => void;
+  onMachineTypeConfigurationClick: () => void;
+  onMachineHealthClick: () => void;
+}
+
+export default function WelcomeScreen( { onMachineTypeConfigurationClick, onMachineHealthClick }: WelcomeScreenProps ) {
   return (
       <div className="welcome-screen">
-        <h1>Machine Assistant</h1>
+        <h1>Your Personal Machine Assistant</h1>
         <div className="button-container">
-          <button>Machine Type Configuration</button>
-          <button>Machine Health</button>
+          <button onClick={onMachineTypeConfigurationClick}>Machine Type Configuration</button>
+          <button onClick={onMachineHealthClick}>Machine Health</button>
         </div>
       </div>
   );

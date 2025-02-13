@@ -1,12 +1,20 @@
 import "./Sidebar.css";
 
-export function Sidebar({ isOpen, onClose }: { isOpen: boolean, onClose: () => void }) {
-  return (
+interface SidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+  onHomeClick: () => void;
+  onMachineTypeConfigurationClick: () => void;
+  onMachineHealthClick: () => void;
+}
+
+export function Sidebar({ isOpen, onClose, onHomeClick, onMachineTypeConfigurationClick, onMachineHealthClick }: SidebarProps) {  return (
     <div className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
       <button onClick={onClose}>Close</button>
       <ul>
-        <li>Machine Type Configuration</li>
-        <li>Machine Health</li>
+        <li onClick={onHomeClick}>Home</li>
+        <li onClick={onMachineTypeConfigurationClick}>Machine Type Configuration</li>
+        <li onClick={onMachineHealthClick}>Machine Health</li>
       </ul>
     </div>
   );

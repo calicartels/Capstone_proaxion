@@ -1,10 +1,14 @@
-"use client"
-
 import * as React from "react";
 import { Sidebar } from "./Sidebar";
 import { HamburgerButton } from "./HamburgerButton";
 
-export function HamburgerMenu() {
+interface HamburgerMenuProps {
+  onHomeClick: () => void;
+  onMachineTypeConfigurationClick: () => void;
+  onMachineHealthClick: () => void;
+}
+
+function HamburgerMenu({ onHomeClick, onMachineTypeConfigurationClick, onMachineHealthClick }: HamburgerMenuProps) {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState<boolean>(false);
 
   const openSidebar = () => {
@@ -20,7 +24,15 @@ export function HamburgerMenu() {
   return (
     <div>
       {!isSidebarOpen && <HamburgerButton onClick={openSidebar} />}
-      <Sidebar isOpen={isSidebarOpen} onClose={closeSidebar} />
+      <Sidebar 
+        isOpen={isSidebarOpen} 
+        onClose={closeSidebar} 
+        onHomeClick={onHomeClick}
+        onMachineTypeConfigurationClick={onMachineTypeConfigurationClick}
+        onMachineHealthClick={onMachineHealthClick}
+      />
     </div>
   );
 }
+
+export { HamburgerMenu };

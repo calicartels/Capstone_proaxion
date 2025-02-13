@@ -1,0 +1,62 @@
+select {
+  padding: 10px; /* Increase padding to make the select box larger */
+  border-radius: 8px; /* Add rounded corners */
+  font-size: 1rem; /* Adjust font size as needed */
+  border: 1px solid #ccc; /* Add a border */
+  width: 50%; /* Ensure the select box takes half width of its container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px; /* Add space below the select box */
+}
+
+.mtc-input {
+  padding: 10px; /* Increase padding to make the select box larger */
+  border-radius: 8px; /* Add rounded corners */
+  font-size: 1rem; /* Adjust font size as needed */
+  border: 1px solid #ccc; /* Add a border */
+  width: 50%; /* Ensure the select box takes half width of its container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px; /* Add space below the select box */
+}
+
+.machine-type-configuration-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+}
+
+.machine-type-configuration-container h1 {
+  margin: 20px 0; /* Add some margin to the h1 tag */
+  text-align: center;
+  font-size: 2.5rem; /* Adjust the font size of h1 */
+}
+
+.machine-type-configuration-container h2 {
+  font-size: 2rem; /* Adjust the font size of h2 */
+  margin-bottom: 20px; /* Add some margin below the h2 tag */
+}
+
+.machine-type-configuration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Take up remaining space */
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  gap: 5rem; /* Adjust the gap between buttons as needed */
+}
+
+.button-container button {
+  padding: 10px 20px; /* Add padding to the buttons */
+  border-radius: 8px; /* Add rounded corners to the buttons */
+  border: 1px solid #ccc; /* Add a border to the buttons */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.button-container button:hover {
+  background-color: #555; /* Change background color on hover */
+  color: #fff; /* Change text color on hover */
+}

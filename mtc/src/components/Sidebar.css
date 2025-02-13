@@ -35,6 +35,12 @@
 }
 
 .sidebar li {
-  padding: 1rem;
+  padding: 10px;
+  cursor: pointer; /* Add this line to change the cursor to a pointer */
   border-bottom: none; /* Remove the bottom border */
+  user-select: none; /* Prevent text selection */
+}
+
+.sidebar li:hover {
+  color: #f0f0f0; /* Change text color on hover */
 }
