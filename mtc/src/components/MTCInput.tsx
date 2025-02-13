@@ -2,20 +2,26 @@ import './MTCInput.css';
 
 interface MTCInputProps {
   onBackClick: () => void;
+  onNextClick: () => void;
+  title: string;
+  options: { value: string; label: string }[];
 }
 
-function MTCInput({ onBackClick }: MTCInputProps) {
+function MTCInput({ onBackClick, onNextClick, title, options }: MTCInputProps) {
   return (
     <div>
-      <h2>Type of Machine</h2>
+      <h2>{title}</h2>
       <select>
-        <option value="MT1">Fan</option>
-        <option value="MT2">Other</option>
+        {options.map((option) => (
+          <option key={option.value} value={option.value}>
+            {option.label}
+          </option>
+        ))}
       </select>
       
       <div className="button-container">
         <button onClick={onBackClick}>Back</button>
-        <button>Next</button>
+        <button onClick={onNextClick}>Next</button>
       </div>
     </div>
   );

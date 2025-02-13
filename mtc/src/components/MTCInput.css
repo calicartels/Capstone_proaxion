@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+body, html {
+  font-family: 'Raleway', sans-serif;
+}
+
 select {
   padding: 10px; /* Increase padding to make the select box larger */
   border-radius: 8px; /* Add rounded corners */
