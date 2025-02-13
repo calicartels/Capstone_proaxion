@@ -7,22 +7,38 @@ body, html {
   height: 100%;
 }
 
+h1 {
+  color: #B4D03E; /* Set h1 text color to #B4D03E */
+}
+
 select {
   padding: 10px; /* Increase padding to make the select box larger */
-  border-radius: 8px; /* Add rounded corners */
-  font-size: 1rem; /* Adjust font size as needed */
+  border-radius: 50px; /* Add very rounded corners */
+  font-size: 1.5rem; /* Adjust font size as needed */
   border: 1px solid #ccc; /* Add a border */
-  width: 50%; /* Ensure the select box takes half width of its container */
+  width: 80%; /* Ensure the select box takes 2.5 times the width of its container */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   margin-bottom: 20px; /* Add space below the select box */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for border and box-shadow */
+}
+
+select:focus,
+select:hover {
+  border-color: #ccc; /* Keep border color the same on focus and hover */
+  box-shadow: none; /* Remove box shadow on focus and hover */
+}
+
+select option {
+  background-color: white; /* Set default background color for options */
+  color: black; /* Set default text color for options */
 }
 
 .mtc-input {
   padding: 10px; /* Increase padding to make the select box larger */
-  border-radius: 8px; /* Add rounded corners */
-  font-size: 1rem; /* Adjust font size as needed */
+  border-radius: 50px; /* Add very rounded corners */
+  font-size: 1.5rem; /* Adjust font size as needed */
   border: 1px solid #ccc; /* Add a border */
-  width: 50%; /* Ensure the select box takes half width of its container */
+  width: 125%; /* Ensure the select box takes 2.5 times the width of its container */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   margin-bottom: 20px; /* Add space below the select box */
 }
@@ -78,14 +94,30 @@ select {
   transform: translateX(-50%);
 }
 
-.button-container button {
+.button-container button,
+.footer-buttons button {
   padding: 10px 20px; /* Add padding to the buttons */
-  border-radius: 8px; /* Add rounded corners to the buttons */
-  border: 1px solid #ccc; /* Add a border to the buttons */
+  border-radius: 50px; /* Add very rounded corners to the buttons */
+  border: 1px solid #B4D03E; /* Add a border to the buttons */
+  background-color: transparent; /* Set background color to transparent */
+  color: #B4D03E; /* Set text color to #B4D03E */
   cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for background and text color */
 }
 
-.button-container button:hover {
-  background-color: #555; /* Change background color on hover */
-  color: #fff; /* Change text color on hover */
+.button-container button:hover,
+.footer-buttons button:hover {
+  background-color: #B4D03E; /* Change background color on hover */
+  color: black; /* Change text color on hover */
+  border: 1px solid #B4D03E; /* Ensure border remains #B4D03E on hover */
+}
+
+.footer-buttons button.active {
+  border: 1px solid #B4D03E; /* Ensure border remains #B4D03E when active */
+}
+
+/* Sidebar list item hover effect */
+.sidebar ul li:hover {
+  background-color: #B4D03E; /* Change background color to #B4D03E on hover */
+  color: black; /* Change text color to black on hover */
 }

@@ -10,12 +10,15 @@ interface MachineTypeConfigurationProps {
 
 function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps) {
   const [step, setStep] = useState(1);
+  const [activeButton, setActiveButton] = useState<string | null>(null);
 
   const handleNextClick = () => {
+    setActiveButton('next');
     setStep(step + 1);
   };
 
   const handleBackClick = () => {
+    setActiveButton('back');
     if (step === 1) {
       onHomeClick();
     } else {
@@ -39,16 +42,12 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
       <div className="machine-type-configuration">
         {step === 1 && (
           <MTCInput 
-            onBackClick={handleBackClick} 
-            onNextClick={handleNextClick}
             title="Type of Machine" 
             options={step1Options} 
           />
         )}
         {step === 2 && (
           <MTCInput 
-            onBackClick={handleBackClick} 
-            onNextClick={handleNextClick}
             title="Power Transmission" 
             options={step2Options} 
           />
@@ -61,12 +60,31 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
             <div className="chatbot">
               <ChatBot />
             </div>
-            <div className="footer-buttons">
-              <button onClick={handleBackClick}>Back</button>
-              <button onClick={onHomeClick}>Home</button>
-            </div>
           </div>
         )}
+        <div className="footer-buttons">
+          <button 
+            onClick={handleBackClick} 
+            className={activeButton === 'back' ? 'active' : ''}
+          >
+            Back
+          </button>
+          {step < 3 ? (
+            <button 
+              onClick={handleNextClick} 
+              className={activeButton === 'next' ? 'active' : ''}
+            >
+              Next
+            </button>
+          ) : (
+            <button 
+              onClick={onHomeClick} 
+              className={activeButton === 'home' ? 'active' : ''}
+            >
+              Home
+            </button>
+          )}
+        </div>
       </div>
     </div>
   );

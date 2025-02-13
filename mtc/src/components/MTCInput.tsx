@@ -1,15 +1,14 @@
+import React from 'react';
 import './MTCInput.css';
 
 interface MTCInputProps {
-  onBackClick: () => void;
-  onNextClick: () => void;
   title: string;
   options: { value: string; label: string }[];
 }
 
-function MTCInput({ onBackClick, onNextClick, title, options }: MTCInputProps) {
+const MTCInput: React.FC<MTCInputProps> = ({ title, options }) => {
   return (
-    <div>
+    <div className="mtc-input-container">
       <h2>{title}</h2>
       <select>
         {options.map((option) => (
@@ -18,13 +17,8 @@ function MTCInput({ onBackClick, onNextClick, title, options }: MTCInputProps) {
           </option>
         ))}
       </select>
-      
-      <div className="button-container">
-        <button onClick={onBackClick}>Back</button>
-        <button onClick={onNextClick}>Next</button>
-      </div>
     </div>
   );
-}
+};
 
 export default MTCInput;
