@@ -9,6 +9,7 @@
   
   .welcome-screen h1 {
     margin: 200; /* Remove default margin */
+    color: initial;
   }
 
 .button-container {
