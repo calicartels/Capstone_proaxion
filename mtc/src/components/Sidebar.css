@@ -27,6 +27,23 @@
   font-size: 0.8rem; /* Adjust the font size as needed */
 }
 
+.close-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.close-button:hover {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
 .sidebar ul {
   list-style: none;
   padding: 0;

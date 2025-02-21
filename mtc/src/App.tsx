@@ -1,60 +1,48 @@
-import { useState } from "react"
-import "./App.css"
-import WelcomeScreen from "./components/WelcomeScreen.tsx"
-import { HamburgerMenu } from "./components/HamburgerMenu.tsx"
-import MachineTypeConfiguration from "./components/MachineTypeConfiguration.tsx"
-import MachineHealth from "./components/MachineHealth.tsx"
-import ProAxionLogo from "./assets/ProAxion-logo.png"
+import React, { useState } from 'react';
+import WelcomeScreen from './components/WelcomeScreen';
+import MachineTypeConfiguration from './components/MachineTypeConfiguration';
+import MachineHealth from './components/MachineHealth';
+import ContactUs from './components/ContactUs';
+import './App.css';
 
 function App() {
-  const [showWelcomeScreen, setShowWelcomeScreen] = useState(true);
-  const [showMachineTypeConfiguration, setShowMachineTypeConfiguration] = useState(false);
-  const [showMachineHealth, setShowMachineHealth] = useState(false);
+  const [currentScreen, setCurrentScreen] = useState('welcome');
 
   const handleHomeClick = () => {
-    setShowWelcomeScreen(true);
-    setShowMachineTypeConfiguration(false);
-    setShowMachineHealth(false);
+    setCurrentScreen('welcome');
   };
+
   const handleMachineTypeConfigurationClick = () => {
-    setShowWelcomeScreen(false);
-    setShowMachineTypeConfiguration(true);
-    setShowMachineHealth(false);
+    setCurrentScreen('machineTypeConfiguration');
   };
+
   const handleMachineHealthClick = () => {
-    setShowWelcomeScreen(false);
-    setShowMachineTypeConfiguration(false);
-    setShowMachineHealth(true);
+    setCurrentScreen('machineHealth');
+  };
+
+  const handleContactUsClick = () => {
+    setCurrentScreen('contact');
   };
 
   return (
-    <>
-      { showWelcomeScreen && (
-        <WelcomeScreen 
+    <div className="App">
+      {currentScreen === 'welcome' && (
+        <WelcomeScreen
           onHomeClick={handleHomeClick}
-          onMachineTypeConfigurationClick={handleMachineTypeConfigurationClick} 
+          onMachineTypeConfigurationClick={handleMachineTypeConfigurationClick}
           onMachineHealthClick={handleMachineHealthClick}
-        /> 
+        />
       )}
-      { showMachineTypeConfiguration && (
-        <MachineTypeConfiguration 
-          onHomeClick={handleHomeClick} 
-        /> 
+      {currentScreen === 'machineTypeConfiguration' && (
+        <MachineTypeConfiguration onHomeClick={handleHomeClick} />
       )}
-      { showMachineHealth && <MachineHealth /> }
-
-      <HamburgerMenu 
-        onHomeClick={handleHomeClick}
-        onMachineTypeConfigurationClick={handleMachineTypeConfigurationClick}
-        onMachineHealthClick={handleMachineHealthClick}
-      />
-      
-      <footer className="app-footer">
-        <img src={ ProAxionLogo } alt="Proaxion Logo" className="proaxion-logo" />
-      </footer>
-    </>
-  )
+      {currentScreen === 'machineHealth' && (
+        <MachineHealth onHomeClick={handleHomeClick} />
+      )}
+      {currentScreen === 'contact' && <ContactUs onBackClick={handleHomeClick} />}
+    </div>
+  );
 }
 
-export default App
+export default App;
 

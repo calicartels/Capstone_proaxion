@@ -6,9 +6,10 @@ interface HamburgerMenuProps {
   onHomeClick: () => void;
   onMachineTypeConfigurationClick: () => void;
   onMachineHealthClick: () => void;
+  onContactUsClick: () => void; // Add this line
 }
 
-function HamburgerMenu({ onHomeClick, onMachineTypeConfigurationClick, onMachineHealthClick }: HamburgerMenuProps) {
+function HamburgerMenu({ onHomeClick, onMachineTypeConfigurationClick, onMachineHealthClick, onContactUsClick }: HamburgerMenuProps) {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState<boolean>(false);
 
   const openSidebar = () => {
@@ -30,6 +31,7 @@ function HamburgerMenu({ onHomeClick, onMachineTypeConfigurationClick, onMachine
         onHomeClick={onHomeClick}
         onMachineTypeConfigurationClick={onMachineTypeConfigurationClick}
         onMachineHealthClick={onMachineHealthClick}
+        onContactUsClick={onContactUsClick} // Pass the prop
       />
     </div>
   );

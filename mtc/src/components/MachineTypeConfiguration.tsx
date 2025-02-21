@@ -63,12 +63,21 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
           </div>
         )}
         <div className="footer-buttons">
-          <button 
-            onClick={handleBackClick} 
-            className={activeButton === 'back' ? 'active' : ''}
-          >
-            Back
-          </button>
+          {step === 1 ? (
+            <button 
+              onClick={onHomeClick} 
+              className={activeButton === 'home' ? 'active' : ''}
+            >
+              Home
+            </button>
+          ) : (
+            <button 
+              onClick={handleBackClick} 
+              className={activeButton === 'back' ? 'active' : ''}
+            >
+              Back
+            </button>
+          )}
           {step < 3 ? (
             <button 
               onClick={handleNextClick} 

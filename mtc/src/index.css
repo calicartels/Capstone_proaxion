@@ -36,22 +36,32 @@ h1 {
 }
 
 button {
-  border-radius: 8px;
-  border: 1px solid;
+  border-radius: 50px; /* Add very rounded corners to the buttons */
+  border: 1px solid #B4D03E; /* Green outline */
   padding: 0.6em 1.2em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
   cursor: pointer;
-  transition: border-color 0.25s;
+  background-color: transparent;
+  color: #B4D03E; /* Green text */
+  margin: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for background and text color */
 }
+
 button:hover {
-  color: transparent;
-  color: black;
+  background-color: #B4D03E; /* Change background color on hover */
+  color: black; /* Change text color on hover */
 }
+
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none; /* Remove the white border on focus */
+}
+
+select option:hover {
+  background-color: #B4D03E; /* Change background color to green on hover */
+  color: white; /* Change text color to white on hover */
 }
 
 @media (prefers-color-scheme: light) {

@@ -6,18 +6,20 @@ interface SidebarProps {
   onHomeClick: () => void;
   onMachineTypeConfigurationClick: () => void;
   onMachineHealthClick: () => void;
+  onContactUsClick: () => void; // Add this line
 }
 
-export function Sidebar({ isOpen, onClose, onHomeClick, onMachineTypeConfigurationClick, onMachineHealthClick }: SidebarProps) {  return (
+export function Sidebar({ isOpen, onClose, onHomeClick, onMachineTypeConfigurationClick, onMachineHealthClick, onContactUsClick }: SidebarProps) {
+  return (
     <div className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
-      <button onClick={onClose}>Close</button>
+      <button className="close-button" onClick={onClose}>Close</button>
       <ul>
         <li onClick={onHomeClick}>Home</li>
         <li onClick={onMachineTypeConfigurationClick}>Install New Sensors</li>
         <li>Enhance Sensor Installs</li>
         <li onClick={onMachineHealthClick}>Trouble Shoot Machine</li>
         <li>Optimize Machine Data</li>
-        <li>Contact Us</li>
+        <li onClick={onContactUsClick}>Contact Us</li> {/* Add onClick handler */}
       </ul>
     </div>
   );

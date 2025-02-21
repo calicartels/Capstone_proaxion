@@ -27,27 +27,3 @@
   resize: vertical;
   height: 100px;
 }
-
-button {
-  border-radius: 50px;
-  border: 1px solid #B4D03E; /* Green outline */
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  cursor: pointer;
-  background-color: transparent;
-  color: #B4D03E; /* Green text */
-  margin: 10px;
-}
-
-button:hover {
-  background-color: #B4D03E;
-  border-color: #B4D03E;
-  color: transparent;
-}
-
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}

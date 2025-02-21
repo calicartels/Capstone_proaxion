@@ -18,3 +18,8 @@
   width: 24px;
   height: 24px;
 }
+
+.hamburger-button:hover {
+  background-color: inherit;
+  color: white;
+}
