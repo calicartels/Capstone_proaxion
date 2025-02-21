@@ -38,7 +38,7 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
 
   return (
     <div className="machine-type-configuration-container">
-      <h1>Install New Sensors</h1>
+      <h1>Monitor a New Machine</h1>
       <div className="machine-type-configuration">
         {step === 1 && (
           <MTCInput 

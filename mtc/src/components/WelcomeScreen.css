@@ -21,7 +21,7 @@
 
 .button-container button,
 .contact-us button {
-  width: 220px; /* Set a fixed width for all buttons */
+  width: 250px; /* Set a fixed width for all buttons */
 }
 
 .button-container.centered {

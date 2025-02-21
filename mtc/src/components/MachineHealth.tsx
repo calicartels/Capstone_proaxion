@@ -7,7 +7,7 @@ interface MachineHealthProps {
 function MachineHealth({ onHomeClick }: MachineHealthProps) {
   return (
     <div>
-      <h1>Trouble Shoot Machine</h1>
+      <h1>Trouble Shoot a Machine</h1>
       <button onClick={onHomeClick}>Home</button>
     </div>
   );

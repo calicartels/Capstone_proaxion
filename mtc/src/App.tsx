@@ -5,6 +5,7 @@ import MachineTypeConfiguration from './components/MachineTypeConfiguration';
 import MachineHealth from './components/MachineHealth';
 import EnhanceSensorInstalls from './components/EnhanceSensorInstalls';
 import OptimizeMachineData from './components/OptimizeMachineData';
+import CreateMaintenancePlan from './components/CreateMaintenancePlan';
 import ContactUs from './components/ContactUs';
 import { Sidebar } from './components/Sidebar';
 import './App.css';
@@ -36,6 +37,11 @@ function App() {
 
   const handleOptimizeMachineDataClick = () => {
     setCurrentScreen('optimizeMachineData');
+    setIsSidebarOpen(false);
+  };
+
+  const handleCreateMaintenancePlanClick = () => {
+    setCurrentScreen('createMaintenancePlan');
     setIsSidebarOpen(false);
   };
 
@@ -75,6 +81,7 @@ function App() {
           onMachineHealthClick={handleMachineHealthClick}
           onEnhanceSensorInstallsClick={handleEnhanceSensorInstallsClick}
           onOptimizeMachineDataClick={handleOptimizeMachineDataClick}
+          onCreateMaintenancePlanClick={handleCreateMaintenancePlanClick} // Pass the new handler
         />
       )}
       {currentScreen === 'machineTypeConfiguration' && (
@@ -88,6 +95,9 @@ function App() {
       )}
       {currentScreen === 'optimizeMachineData' && (
         <OptimizeMachineData onHomeClick={handleHomeClick} />
+      )}
+      {currentScreen === 'createMaintenancePlan' && (
+        <CreateMaintenancePlan onHomeClick={handleHomeClick} />
       )}
       {currentScreen === 'contact' && <ContactUs onBackClick={handleHomeClick} />}
     </div>
