@@ -19,10 +19,8 @@
   margin-bottom: 20px;
 }
 
-.button-container button {
-  padding: 0.5rem 1rem;
-  font-size: 1rem;
-  cursor: pointer;
+.button-container button,
+.contact-us button {
   width: 250px; /* Set a fixed width for all buttons */
 }
 

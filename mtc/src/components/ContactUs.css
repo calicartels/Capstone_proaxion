@@ -1,0 +1,53 @@
+.contact-us {
+  text-align: center;
+  padding: 20px;
+}
+
+.contact-us form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  width: 100%;
+  max-width: 400px;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 100px;
+}
+
+button {
+  border-radius: 50px;
+  border: 1px solid #B4D03E; /* Green outline */
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  background-color: transparent;
+  color: #B4D03E; /* Green text */
+  margin: 10px;
+}
+
+button:hover {
+  background-color: #B4D03E;
+  border-color: #B4D03E;
+  color: transparent;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

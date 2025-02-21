@@ -18,21 +18,7 @@ html, body, #root {
 }
 
 h1 {
-  color: #B4D03E; /* Set h1 text color to lime green */
-}
-
-button {
-  padding: 10px 20px; /* Add padding to the buttons */
-  border-radius: 50px; /* Add very rounded corners to the buttons */
-  border: 1px solid #ccc; /* Add a border to the buttons */
-  cursor: pointer; /* Change cursor to pointer on hover */
-  background-color: #f0f0f0; /* Add background color */
-  transition: background-color 0.3s ease; /* Add transition for background color */
-}
-
-button:hover {
-  background-color: #555; /* Change background color on hover */
-  color: #fff; /* Change text color on hover */
+  color: #B4D03E;
 }
 
 .logo {
@@ -42,10 +28,10 @@ button:hover {
   transition: filter 300ms;
 }
 .logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+  filter: drop-shadow(0 0 2em #B4D03E);
 }
 .logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+  filter: drop-shadow(0 0 2em #B4D03E);
 }
 
 .card {
@@ -64,5 +50,5 @@ button:hover {
 }
 
 .proaxion-logo {
-  width: 200px; /* Adjust the size as needed */
+  width: 200px;
 }
