@@ -3,6 +3,8 @@ import { FaBars } from 'react-icons/fa';
 import WelcomeScreen from './components/WelcomeScreen';
 import MachineTypeConfiguration from './components/MachineTypeConfiguration';
 import MachineHealth from './components/MachineHealth';
+import EnhanceSensorInstalls from './components/EnhanceSensorInstalls';
+import OptimizeMachineData from './components/OptimizeMachineData';
 import ContactUs from './components/ContactUs';
 import { Sidebar } from './components/Sidebar';
 import './App.css';
@@ -23,6 +25,16 @@ function App() {
 
   const handleMachineHealthClick = () => {
     setCurrentScreen('machineHealth');
+    setIsSidebarOpen(false);
+  };
+
+  const handleEnhanceSensorInstallsClick = () => {
+    setCurrentScreen('enhanceSensorInstalls');
+    setIsSidebarOpen(false);
+  };
+
+  const handleOptimizeMachineDataClick = () => {
+    setCurrentScreen('optimizeMachineData');
     setIsSidebarOpen(false);
   };
 
@@ -48,6 +60,8 @@ function App() {
          onHomeClick={handleHomeClick}
          onMachineTypeConfigurationClick={handleMachineTypeConfigurationClick}
          onMachineHealthClick={handleMachineHealthClick}
+         onEnhanceSensorInstallsClick={handleEnhanceSensorInstallsClick}
+         onOptimizeMachineDataClick={handleOptimizeMachineDataClick}
          onContactUsClick={handleContactUsClick}
       />
       {currentScreen === 'welcome' && (
@@ -55,6 +69,8 @@ function App() {
           onHomeClick={handleHomeClick}
           onMachineTypeConfigurationClick={handleMachineTypeConfigurationClick}
           onMachineHealthClick={handleMachineHealthClick}
+          onEnhanceSensorInstallsClick={handleEnhanceSensorInstallsClick}
+          onOptimizeMachineDataClick={handleOptimizeMachineDataClick}
         />
       )}
       {currentScreen === 'machineTypeConfiguration' && (
@@ -62,6 +78,12 @@ function App() {
       )}
       {currentScreen === 'machineHealth' && (
         <MachineHealth onHomeClick={handleHomeClick} />
+      )}
+      {currentScreen === 'enhanceSensorInstalls' && (
+        <EnhanceSensorInstalls onHomeClick={handleHomeClick} />
+      )}
+      {currentScreen === 'optimizeMachineData' && (
+        <OptimizeMachineData onHomeClick={handleHomeClick} />
       )}
       {currentScreen === 'contact' && <ContactUs onBackClick={handleHomeClick} />}
     </div>
