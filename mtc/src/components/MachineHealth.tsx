@@ -3,7 +3,7 @@ import React from 'react';
 function MachineHealth() {
   return (
     <div>
-      <h1>Machine Health</h1>
+      <h1>Trouble Shoot Machine</h1>
     </div>
   );
 }

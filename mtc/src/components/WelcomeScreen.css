@@ -16,10 +16,17 @@
   display: flex;
   justify-content: center;
   gap: 5rem; /* Adjust the gap between buttons as needed */
+  margin-bottom: 20px;
 }
 
 .button-container button {
   padding: 0.5rem 1rem;
   font-size: 1rem;
   cursor: pointer;
+  width: 250px; /* Set a fixed width for all buttons */
+}
+
+.button-container.centered {
+  display: flex;
+  justify-content: center;
 }
