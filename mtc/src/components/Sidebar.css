@@ -6,7 +6,7 @@
   height: 100%;
   background-color: #333;
   color: white;
-  transform: translateX(-100%);
+  transform: translateX(-200%);
   transition: transform 0.3s ease;
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@
 }
 
 .sidebar li {
-  padding: 10px;
+  padding: 10px 20px;
   cursor: pointer; /* Add this line to change the cursor to a pointer */
   border-bottom: none; /* Remove the bottom border */
   user-select: none; /* Prevent text selection */

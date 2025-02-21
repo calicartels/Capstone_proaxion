@@ -47,6 +47,10 @@ select option {
   display: flex;
   flex-direction: column;
   height: 100vh; /* Full viewport height */
+  width: 90%; /* Increase the width to 90% of the viewport */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Add some padding */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
 }
 
 .machine-type-configuration-container h1 {
@@ -67,12 +71,14 @@ select option {
   align-items: center;
   flex-grow: 1; /* Take up remaining space */
   text-align: center;
+  width: 100%; /* Ensure the inner container takes up the full width */
 }
 
 .instructions-chatbot-container {
   display: flex;
   width: 100%;
   flex-grow: 1; /* Take up remaining space */
+  justify-content: space-between;
 }
 
 .instructions-chatbot-container .instructions {

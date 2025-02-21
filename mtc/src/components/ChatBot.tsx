@@ -1,12 +1,14 @@
 import React from 'react';
+import './ChatBot.css';
 
-function ChatBot() {
+const ChatBot: React.FC = () => {
   return (
-    <div>
+    <div className="chatbot-container">
       <h2>ChatBot</h2>
-      <p>Chat with us...</p>
+      <p>How can I assist you today?</p>
+      {/* Add more chatbot content as needed */}
     </div>
   );
-}
+};
 
 export default ChatBot;

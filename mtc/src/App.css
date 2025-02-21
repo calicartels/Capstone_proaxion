@@ -2,16 +2,18 @@ html, body, #root {
   height: 100%;
   margin: 0;
   padding: 0;
+  width: 100%; /* Ensure the root takes up the full width */
 }
 
 .App {
   display: flex;
   flex-direction: column;
   height: 100%;
+  width: 100%; /* Ensure the App takes up the full width */
 }
 
 #root {
-  max-width: 1280px;
+  max-width: 100%; /* Increase the max-width to 100% of the viewport */
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
@@ -51,4 +53,22 @@ h1 {
 
 .proaxion-logo {
   width: 200px;
+}
+
+.hamburger-button {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+  position: fixed; /* if you want it fixed in position */
+  top: 1rem;
+  left: 1rem;
+  z-index: 1000; /* make sure it's on top of other elements */
+}
+
+/* Remove any hover styling */
+.hamburger-button:hover {
+  background: transparent;
+  color: #B4D03E;
 }

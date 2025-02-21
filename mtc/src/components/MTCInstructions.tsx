@@ -1,12 +1,14 @@
 import React from 'react';
+import './MTCInstructions.css';
 
-function MTCInstructions() {
+const MTCInstructions: React.FC = () => {
   return (
-    <div>
+    <div className="instructions-container">
       <h2>Instructions</h2>
-      <p>Here are the instructions...</p>
+      <p>Follow these steps to install new sensors...</p>
+      {/* Add more instructions as needed */}
     </div>
   );
-}
+};
 
 export default MTCInstructions;
