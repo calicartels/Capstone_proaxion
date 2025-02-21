@@ -7,9 +7,11 @@ interface HamburgerMenuProps {
   onMachineTypeConfigurationClick: () => void;
   onMachineHealthClick: () => void;
   onContactUsClick: () => void; // Add this line
+  onEnhanceSensorInstallsClick: () => void; // Add this line
+  onOptimizeMachineDataClick: () => void; // Add this line
 }
 
-function HamburgerMenu({ onHomeClick, onMachineTypeConfigurationClick, onMachineHealthClick, onContactUsClick }: HamburgerMenuProps) {
+function HamburgerMenu({ onHomeClick, onMachineTypeConfigurationClick, onMachineHealthClick, onContactUsClick, onEnhanceSensorInstallsClick, onOptimizeMachineDataClick }: HamburgerMenuProps) {
   const [isSidebarOpen, setIsSidebarOpen] = React.useState<boolean>(false);
 
   const openSidebar = () => {
@@ -32,6 +34,8 @@ function HamburgerMenu({ onHomeClick, onMachineTypeConfigurationClick, onMachine
         onMachineTypeConfigurationClick={onMachineTypeConfigurationClick}
         onMachineHealthClick={onMachineHealthClick}
         onContactUsClick={onContactUsClick} // Pass the prop
+        onEnhanceSensorInstallsClick={onEnhanceSensorInstallsClick} // Pass the prop
+        onOptimizeMachineDataClick={onOptimizeMachineDataClick} // Pass the prop
       />
     </div>
   );
