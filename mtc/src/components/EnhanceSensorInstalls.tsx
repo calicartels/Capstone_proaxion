@@ -8,7 +8,7 @@ const EnhanceSensorInstalls: React.FC<EnhanceSensorInstallsProps> = ({ onHomeCli
   return (
     <div className="enhance-sensor-installs">
       <h1>Enhance Sensor Installs</h1>
-      {/* Page content goes here */}
+      <p>Coming Soon</p>
       <button onClick={onHomeClick}>Home</button>
     </div>
   );
