@@ -52,7 +52,8 @@ h1 {
 }
 
 .proaxion-logo {
-  width: 200px;
+  width: 100px;
+  height: auto;
 }
 
 .hamburger-button {
@@ -71,4 +72,18 @@ h1 {
 .hamburger-button:hover {
   background: transparent;
   color: #B4D03E;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  padding: 10px;
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 10px;
 }

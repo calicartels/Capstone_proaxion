@@ -8,6 +8,7 @@ import OptimizeMachineData from './components/OptimizeMachineData';
 import ContactUs from './components/ContactUs';
 import { Sidebar } from './components/Sidebar';
 import './App.css';
+import ProAxionLogo from './assets/ProAxion-logo.png'; // Import the logo
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState('welcome');
@@ -49,6 +50,9 @@ function App() {
 
   return (
     <div className="App">
+      <header className="header">
+        <img src={ProAxionLogo} alt="ProAxion Logo" className="proaxion-logo" />
+      </header>
       { !isSidebarOpen && (
         <button className="hamburger-button" onClick={toggleSidebar}>
           <FaBars />
