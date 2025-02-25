@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+body, html {
+  font-family: 'Raleway', sans-serif;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+h1 {
+  color: #B4D03E; /* Set h1 text color to #B4D03E */
+}
+
+select {
+  padding: 10px; /* Increase padding to make the select box larger */
+  border-radius: 50px; /* Add very rounded corners */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  border: 1px solid #ccc; /* Add a border */
+  width: 80%; /* Ensure the select box takes 2.5 times the width of its container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px; /* Add space below the select box */
+  transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Add transition for border and box-shadow */
+}
+
+select:focus,
+select:hover {
+  border-color: #ccc; /* Keep border color the same on focus and hover */
+  box-shadow: none; /* Remove box shadow on focus and hover */
+}
+
+select option {
+  background-color: white; /* Set default background color for options */
+  color: black; /* Set default text color for options */
+}
+
+.mtc-input {
+  padding: 10px; /* Increase padding to make the select box larger */
+  border-radius: 50px; /* Add very rounded corners */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  border: 1px solid #ccc; /* Add a border */
+  width: 125%; /* Ensure the select box takes 2.5 times the width of its container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px; /* Add space below the select box */
+}
+
+.machine-type-configuration-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; /* Full viewport height */
+  width: 90%; /* Increase the width to 90% of the viewport */
+  margin: 0 auto; /* Center the container */
+  padding: 20px; /* Add some padding */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+.machine-type-configuration-container h1 {
+  margin: 20px 0; /* Add some margin to the h1 tag */
+  text-align: center;
+  font-size: 2.5rem; /* Adjust the font size of h1 */
+}
+
+.machine-type-configuration-container h2 {
+  font-size: 2rem; /* Adjust the font size of h2 */
+  margin-bottom: 20px; /* Add some margin below the h2 tag */
+}
+
+.machine-type-configuration {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1; /* Take up remaining space */
+  text-align: center;
+  width: 100%; /* Ensure the inner container takes up the full width */
+}
+
+.instructions-chatbot-container {
+  display: flex;
+  width: 100%;
+  flex-grow: 1; /* Take up remaining space */
+  justify-content: space-between;
+}
+
+.instructions-chatbot-container .instructions {
+  flex: 2; /* Take up 2/3 of the page */
+  margin-right: 20px;
+}
+
+.instructions-chatbot-container .chatbot {
+  flex: 1; /* Take up 1/3 of the page */
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: center; /* Center the buttons horizontally */
+  gap: 5rem; /* Adjust the gap between buttons as needed */
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.button-container button,
+.footer-buttons button {
+  padding: 10px 20px; /* Add padding to the buttons */
+  border-radius: 50px; /* Add very rounded corners to the buttons */
+  border: 1px solid #B4D03E; /* Add a border to the buttons */
+  background-color: transparent; /* Set background color to transparent */
+  color: #B4D03E; /* Set text color to #B4D03E */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Add transition for background and text color */
+}
+
+.button-container button:hover,
+.footer-buttons button:hover {
+  background-color: #B4D03E; /* Change background color on hover */
+  color: black; /* Change text color on hover */
+  border: 1px solid #B4D03E; /* Ensure border remains #B4D03E on hover */
+}
+
+.footer-buttons button.active {
+  border: 1px solid #B4D03E; /* Ensure border remains #B4D03E when active */
+}
+
+/* Sidebar list item hover effect */
+.sidebar ul li:hover {
+  background-color: #B4D03E; /* Change background color to #B4D03E on hover */
+  color: black; /* Change text color to black on hover */
+}

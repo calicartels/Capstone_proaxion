@@ -1,0 +1,6 @@
+.instructions-container {
+  border: 1px solid white; /* Add a 1px white border */
+  padding: 10px; /* Optional: Add some padding inside the border */
+  height: 70vh; /* Make the container span the height of the viewport */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}

@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap');
+
+body, html {
+  font-family: 'Raleway', sans-serif;
+}
+
+select {
+  padding: 10px; /* Increase padding to make the select box larger */
+  border-radius: 8px; /* Add rounded corners */
+  font-size: 1rem; /* Adjust font size as needed */
+  border: 1px solid #ccc; /* Add a border */
+  width: 50%; /* Ensure the select box takes half width of its container */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  margin-bottom: 20px; /* Add space below the select box */
+}
+
+.button-container {
+  display: flex;
+  gap: 5rem; /* Adjust the gap between buttons as needed */
+}
+
+.button-container button {
+  padding: 10px 20px; /* Add padding to the buttons */
+  border-radius: 8px; /* Add rounded corners to the buttons */
+  border: 1px solid #ccc; /* Add a border to the buttons */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.button-container button:hover {
+  background-color: #e0e0e05e; /* Change background color on hover */
+  }
