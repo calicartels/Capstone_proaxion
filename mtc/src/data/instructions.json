@@ -6,6 +6,29 @@
       "Each sensor comes with a 316 SS threaded ¼”-28 stud for screwing the sensor into a threaded hole on the machine surface.",
       "Sensors require mounting surfaces of the machine to have wall thickness of ½” or greater for threaded studs."
     ]
+  },
+  {
+    "title": "Step 1 - Threaded Stud - Select the Spot for the Sensor",
+    "content": [
+      {
+        "subtitle": "Sensor Location and Orientation",
+        "text": [
+          "Sensors should be mounted either horizontally or vertically at 3, 6, 9, or 12 o’clock.",
+          "The preferred mount is 12 o’clock.",
+          "The axis of the sensor should align with the machine’s shaft axis.",
+          "If you can’t mount the sensor to this orientation, please consult our guide on alternatives."
+        ]
+      },
+      {
+        "subtitle": "Dealing with Shrouds and Guards",
+        "text": [
+          "Use a hole saw so the sensor can protrude out of the guard.",
+          "Modify the shroud to mount NDE sensors.",
+          "Use a cutting wheel to modify guards easily.",
+          "Do not mount sensors directly on fan shrouds.",
+          "Do not fully encase sensor in guard or shroud."
+        ]
+      }
+    ]
   }
-
 ]
