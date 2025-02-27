@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import './MTCInstructions.css';
-import MTCInstructionSteps from './MTCInstructionSteps';
+import './MTCInstructionSteps.css';
 import instructionsData from '../data/instructions.json';
 
 interface InstructionPage {
@@ -8,7 +7,7 @@ interface InstructionPage {
   content: string[];
 }
 
-const MTCInstructions: React.FC = () => {
+const MTCInstructionsSte: React.FC = () => {
   const [instructions, setInstructions] = useState<InstructionPage[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -31,8 +30,13 @@ const MTCInstructions: React.FC = () => {
   };
 
   return (
-    <div className="instructions-container">
-      <MTCInstructionSteps instruction={instructions[currentPage]} />
+    <div className="mtc-instructions">
+      <h2>{instructions[currentPage]?.title}</h2>
+      <div className="instructions-content">
+        {instructions[currentPage]?.content.map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </div>
       <div className="instructions-navigation">
         {currentPage > 0 && (
           <button onClick={handleBack} className="nav-button">Back</button>
@@ -45,4 +49,18 @@ const MTCInstructions: React.FC = () => {
   );
 };
 
-export default MTCInstructions;
+const MTCInstructionSteps: React.FC<MTCInstructionStepsProps> = ({ instruction }) => {
+  return (
+    <div className="mtc-instructions">
+      <h2>{instruction.title}</h2>
+      <div className="instructions-content">
+        {instruction.content.map((paragraph, index) => (
+          <p key={index}>{paragraph}</p>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default MTCInstructionsSte;
+export { MTCInstructionSteps };
