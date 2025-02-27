@@ -10,12 +10,18 @@
   display: flex;
   justify-content: space-between;
   position: absolute;
-  bottom: 10px; /* Position the buttons at the bottom */
+  bottom: 60px; /* Position the buttons above the bottom white line */
   width: 100%; /* Make the navigation span the full width */
   padding: 0 10px; /* Add some padding to the sides */
 }
 
 .nav-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #B4D03E;
+  color: #000;
+  cursor: pointer;
 }
 
 .nav-button:hover {
@@ -24,10 +30,10 @@
 
 .nav-button.back {
   position: absolute;
-  left: 10px;
+  left: 30px;
 }
 
 .nav-button.next {
   position: absolute;
-  right: 10px;
+  right: 70px;
 }

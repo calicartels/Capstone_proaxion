@@ -3,9 +3,14 @@ import './MTCInstructions.css';
 import MTCInstructionSteps from './MTCInstructionSteps';
 import instructionsData from '../data/instructions.json';
 
+interface InstructionContent {
+  subtitle?: string;
+  text: string[];
+}
+
 interface InstructionPage {
   title: string;
-  content: string[];
+  content: InstructionContent[];
 }
 
 const MTCInstructions: React.FC = () => {
@@ -32,15 +37,19 @@ const MTCInstructions: React.FC = () => {
 
   return (
     <div className="instructions-container">
-      <MTCInstructionSteps instruction={instructions[currentPage]} />
-      <div className="instructions-navigation">
-        {currentPage > 0 && (
-          <button onClick={handleBack} className="nav-button back">Back</button>
-        )}
-        {currentPage < totalPages - 1 && (
-          <button onClick={handleNext} className="nav-button next">Next</button>
-        )}
-      </div>
+      {instructions.length > 0 && (
+        <>
+          <MTCInstructionSteps instruction={instructions[currentPage]} />
+          <div className="instructions-navigation">
+            {currentPage > 0 && (
+              <button onClick={handleBack} className="nav-button back">Previous Step</button>
+            )}
+            {currentPage < totalPages - 1 && (
+              <button onClick={handleNext} className="nav-button next">Next Step</button>
+            )}
+          </div>
+        </>
+      )}
     </div>
   );
 };
