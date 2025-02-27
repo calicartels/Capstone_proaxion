@@ -37,14 +37,6 @@ const MTCInstructionsSte: React.FC = () => {
           <p key={index}>{paragraph}</p>
         ))}
       </div>
-      <div className="instructions-navigation">
-        {currentPage > 0 && (
-          <button onClick={handleBack} className="nav-button">Back</button>
-        )}
-        {currentPage < totalPages - 1 && (
-          <button onClick={handleNext} className="nav-button">Next</button>
-        )}
-      </div>
     </div>
   );
 };
