@@ -1,0 +1,454 @@
+{
+  "title": "Sensor Placement 2.25.2025",
+  "source_url": "https://docs.google.com/document/d/1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU/edit",
+  "machines": [
+    {
+      "type": "Fan",
+      "configurations": [
+        {
+          "type": "Motor",
+          "sensor_placement": {
+            "locations": [
+              {
+                "name": "General",
+                "priority": 0,
+                "justification": "## Justification for \"General\" Sensor Placement on a Motor Fan\n\nThe \"General\" location is important for sensor placement because it provides a **general overview of the machine's vibration behavior**. By analyzing the vibration data from this location, you can:\n\n* **Identify overall vibration trends and changes in the machine's health over time.**\n* **Detect and diagnose potential problems, such as unbalance, misalignment, or bearing wear.**\n* **Optimize the machine's performance by identifying areas for potential improvement.**\n* **Provide crucial data for condition monitoring and predictive maintenance programs.**\n\nThis location is particularly beneficial when:\n\n* **Other specific locations, such as the motor itself or independent bearings, are not accessible.**\n* **A broader picture of the machine's vibration health is desired.**\n* **Limited resources necessitate focusing on a single sensor location.**\n\nHowever, it's important to note that the \"General\" location might not capture all potential vibration issues in the machine. For a comprehensive monitoring strategy, consider combining the \"General\" sensor with sensors at other crucial locations like the motor, fan shaft bearings, and independent bearings."
+              },
+              {
+                "name": "Motor",
+                "priority": 0,
+                "justification": "## Justification for Motor as a Sensor Placement Location\n\n**The Motor is a critical sensor placement location for a Motor Fan due to its proximity to the coupling, where the highest load and stress occur.** This location provides the most comprehensive data for monitoring the fan's health and detecting potential issues."
+              },
+              {
+                "name": "Independent Bearing",
+                "priority": 0,
+                "justification": "Independent Bearing: first due to highest load and dynamic forces."
+              }
+            ]
+          },
+          "description": "## Motor Fan Configuration\n\nA **motor fan** is a device that uses an electric motor to drive a fan for generating airflow. It is a common component in various industrial and commercial applications, including ventilation systems, cooling systems, and air conditioning units. \n\nThere are two main types of motor fan configurations:\n\n**1. Direct/Close Coupled:**\n\n* This configuration features a direct connection between the motor and fan shafts without any intermediary coupling.\n* Power transfer is straightforward and highly efficient.\n* **Key characteristics:**\n    * High efficiency\n    * Simple design\n    * Compact size\n    * Limited speed adjustment options\n* **Sensor placement:**\n    * Motor DE (Drive End) - Highest load and stress\n    * Motor NDE (Non-Drive End) for larger motors (>150hp)\n    * Fan shaft bearings (if accessible)\n\n**2. Belt Driven:**\n\n* This configuration uses belts and pulleys to connect the motor and fan.\n* Allows for speed adjustments and easier maintenance access.\n* **Key characteristics:**\n    * Flexibility in speed control\n    * Easier maintenance due to accessibility\n    * May require more space\n    * Belt maintenance and potential slippage\n* **Sensor placement:**\n    * Motor DE (Drive End) - Highest load and stress\n    * Motor NDE (Non-Drive End) for larger motors (>150hp)\n    * Belt-Side bearing\n    * Fan-Side bearing\n\n## Important Details\n\n* **Sensor placement:** Sensors are typically placed on the motor housing and bearings to monitor vibration levels and identify potential issues. The specific placement depends on the configuration and the size of the motor.\n* **Installation methods:** Various methods exist for installing sensors, including drill and tap, epoxy mount, and magnetic mounts. The choice of method depends on the surface and application.\n* **Images:** The document extraction includes several images that illustrate the different configurations and sensor placement options."
+        },
+        {
+          "type": "Independent Bearing",
+          "sensor_placement": {
+            "locations": [
+              {
+                "name": "General",
+                "priority": 0,
+                "justification": "## Justification for \"General\" Sensor Placement Location for Independent Bearing Fan:\n\n* Baseline vibration data collection for trend analysis and anomaly detection.\n* Early identification of potential issues in the overall system.\n* Contextual information for interpreting vibration data from other sensor locations.\n* Monitoring of potential vibration sources not directly associated with the motor or bearings."
+              },
+              {
+                "name": "Motor",
+                "priority": 0,
+                "justification": "## Motor Sensor Placement Justification:\n\nThe \"Motor\" is a critical sensor placement location for an Independent Bearing Fan due to the following reasons:\n\n* **High Load and Stress:** The motor experiences the highest load and stress in the system due to its direct connection to the fan. This makes it more susceptible to early signs of wear and tear, allowing for proactive maintenance and prevention of potential failures.\n* **Comprehensive Data Capture:** Monitoring both the Drive End (DE) and Non-Drive End (NDE) of the motor provides a more complete vibration profile, enabling earlier detection of potential issues and a more accurate assessment of the motor's health."
+              },
+              {
+                "name": "Independent Bearing",
+                "priority": 0,
+                "justification": "## Justification for Independent Bearing Sensor Placement:\n\n**High Load and Stress:**\n\n* The Independent Bearing experiences the highest load and stress among all monitored locations. \n* Monitoring this location provides valuable insights into the overall health of the fan system.\n\n**Early Fault Detection:**\n\n* Detecting issues at the Independent Bearing allows for early intervention and potential mitigation of severe damage.\n\n**Complete System Coverage:**\n\n* Monitoring both the DE and NDE of the Independent Bearing provides comprehensive coverage of the entire system.\n\n**Complementary to Fan Shaft Bearings:**\n\n* While Fan Shaft Bearings are critical for monitoring fan health, the Independent Bearing offers an additional layer of insight into the system's dynamics.\n\n**Provides Valuable Data:**\n\n* The Independent Bearing data can be combined with other sensor data to create a holistic picture of the fan's performance and identify potential problems before they become critical.\n\n**Overall, the Independent Bearing's location provides critical data for early fault detection, comprehensive system monitoring, and improving the reliability and efficiency of the fan system.**"
+              }
+            ]
+          },
+          "description": "## Independent Bearing Fan Description:\n\nAn Independent Bearing Fan utilizes a separate bearing system for the fan shaft, distinct from the motor's bearings. This configuration offers several key advantages:\n\n**1. Increased Flexibility:** Independent bearings allow for adjustments to the fan's speed and angle, independent of the motor's operation.\n\n**2. Reduced Vibration:** By isolating the fan from the motor, vibrations are less likely to transfer, resulting in quieter operation and potentially extending the lifespan of both components.\n\n**3. Improved Efficiency:** Independent bearings can be optimized for the specific load and operating conditions of the fan, leading to improved energy efficiency.\n\n**4. Easier Maintenance:** Replacing or servicing the bearings becomes simpler, as they are readily accessible and independent of the motor.\n\n**5. Enhanced Reliability:** Separating the bearing systems reduces the risk of a single point of failure impacting both the motor and the fan.\n\n## Key Characteristics of an Independent Bearing Fan:\n\n* Distinct bearing system for the fan shaft.\n* Ability to adjust fan speed and angle independently.\n* Reduced vibration and noise.\n* Potentially higher energy efficiency.\n* Easier maintenance.\n* Increased reliability.\n\n## Important Details about Independent Bearing Fans:\n\n* Selection of the appropriate bearing type is crucial for optimal performance and lifespan.\n* Regular inspections and maintenance are essential to ensure smooth operation and prevent premature wear.\n* Proper lubrication practices are critical for maximizing bearing life.\n\n**Disclaimer:** I have provided a comprehensive description based on the information available in the document extraction context. However, it is recommended to consult official technical documentation and manufacturer recommendations for specific details and configurations."
+        },
+        {
+          "type": "Direct/Close Coupled",
+          "description": "Directly connected motor and fan shafts without intermediary coupling. Power transfer is straightforward and highly efficient.",
+          "sensor_placement": {
+            "Motor DE": {
+              "priority": 1,
+              "reason": "Closest to coupling, experiences highest load and stress."
+            },
+            "Motor NDE (\u2265 150 hp)": {
+              "priority": 2,
+              "reason": "Larger motors exert more stress, monitoring both ends provides a fuller vibration profile."
+            },
+            "Fan shaft bearings (if accessible)": {
+              "priority": 3,
+              "reason": "Indicative of fan health, prioritize bearings under highest load or near vibration sources."
+            },
+            "locations": [
+              {
+                "name": "General",
+                "priority": 0,
+                "justification": "## Justification for \"General\" sensor placement location for a Direct/Close Coupled Fan:\n\nThe \"General\" location provides flexibility for sensor placement on the fan housing or motor casing. This enables monitoring of overall vibration levels and detecting potential issues that may not be captured by sensors placed at specific machine components. \n\nThis placement can be especially beneficial for identifying:\n\n* **Imbalance in the fan or motor:** This can cause increased vibration across the entire system, which can be detected by the \"General\" sensor.\n* **Loose components:** Loose bolts, brackets, or other components can lead to increased vibration, which can be picked up by the \"General\" sensor.\n* **Misalignment:** Misalignment between the motor and fan shafts can cause excessive vibration, which can be detected by the \"General\" sensor.\n\n**However, it is important to note that the \"General\" location may not provide the same level of detailed information as sensors placed at specific machine components.** For example, it may not be able to identify the exact source of the vibration or the severity of the problem.\n\nTherefore, it is recommended to **use the \"General\" location in conjunction with other sensor placements** to provide a comprehensive picture of the fan/motor health."
+              },
+              {
+                "name": "Motor",
+                "priority": 0,
+                "justification": "## Justification for \"Motor\" sensor placement location for a Direct/Close Coupled Fan:\n\nThe \"Motor\" location is critical for monitoring a Direct/Close Coupled Fan due to its proximity to the coupling. This point experiences the highest load and stress, making it ideal for detecting potential issues early on. \n\n### Criticality for monitoring:\n\n* **Highest load and stress:** The coupling is the point of power transfer between the motor and fan, experiencing the most significant forces and potential for wear.\n* **Early fault detection:** Monitoring vibrations at the \"Motor\" location allows for the earliest possible detection of imbalances, bearing wear, misalignment, and other problems that could lead to costly downtime.\n\n### Issues detectable at the \"Motor\" location:\n\n* **Imbalance:** Increased vibration across the entire system due to imbalance in the fan or motor.\n* **Loose components:** Loose bolts, brackets, or other components causing increased vibration.\n* **Misalignment:** Excessive vibration caused by misalignment between the motor and fan shafts.\n* **Bearing wear:** Detection of wear in the motor bearings, indicating potential failure.\n\n### Specific conditions/requirements for \"Motor\" placement:\n\n* **Priority 1:** This location is assigned the highest priority due to its criticality for monitoring.\n* **DE (Drive End):** Monitoring the \"DE\" (Drive End) of the motor shaft is recommended for capturing comprehensive data.\n* **NDE (Non-Drive End):** Monitoring the \"NDE\" (Non-Drive End) is recommended for larger motors (\u2265 150 hp) to capture additional vibrational modes.\n\n### Summary:\n\nThe \"Motor\" sensor placement location is crucial for monitoring Direct/Close Coupled Fans due to its proximity to the coupling, which experiences the highest load and stress. This location allows for early detection of potential issues, including imbalance, loose components, misalignment, and bearing wear. The \"DE\" and \"NDE\" of the motor shaft are the recommended positions for sensor placement, with priority given to the \"DE.\""
+              },
+              {
+                "name": "Independent Bearing",
+                "priority": 0,
+                "justification": "## Justification for \"Independent Bearing\" sensor placement location for a Direct/Close Coupled Fan:"
+              }
+            ]
+          }
+        },
+        {
+          "type": "Belt Driven",
+          "description": "Uses belts and pulleys for motor-fan connection, allowing speed adjustments and easier maintenance access.",
+          "sensor_placement": {
+            "Motor DE": {
+              "priority": 1,
+              "reason": "Closest to belt, experiences highest load and stress."
+            },
+            "Motor NDE (\u2265 150 hp)": {
+              "priority": 2,
+              "reason": "Larger motors exert more stress, monitoring both ends provides a fuller vibration profile."
+            },
+            "Belt-Side bearing": {
+              "priority": 3,
+              "reason": "Transfers power from motor to fan, critical for early fault detection."
+            },
+            "Fan-Side bearing": {
+              "priority": 4,
+              "reason": "Supports fan shaft, less vulnerable but important for complete system coverage."
+            },
+            "locations": [
+              {
+                "name": "General",
+                "priority": 0,
+                "justification": "## Justification for \"General\" sensor placement location for a Belt Driven Fan:\n\nThe \"General\" location provides flexibility for sensor placement on the fan housing or motor casing. This enables monitoring of overall vibration levels and detecting potential issues that may not be captured by sensors placed at specific machine components. \n\nThis placement can be especially beneficial for identifying:\n\n* Imbalance in the fan or motor\n* Loose components\n* Misalignment\n\nHowever, it is important to note that the \"General\" location may not provide the same level of detailed information as sensors placed at specific machine components."
+              },
+              {
+                "name": "Motor",
+                "priority": 0,
+                "justification": "## Justification for \"Motor\" sensor placement location for a Belt Driven Fan:\n\nThe \"Motor\" location is critical for monitoring a Belt Driven Fan due to its proximity to the belt, which experiences the highest load and stress. This point is ideal for detecting potential issues early on.\n\n### Criticality for monitoring:\n\n* **Highest load and stress:** The belt is the point of power transfer between the motor and fan, experiencing the most significant forces and potential for wear.\n* **Early fault detection:** Monitoring vibrations at the \"Motor\" location allows for the earliest possible detection of imbalances, belt wear, misalignment, and other problems that could lead to costly downtime.\n\n### Issues detectable at the \"Motor\" location:\n\n* **Imbalance:** Increased vibration across the entire system due to imbalance in the fan or motor.\n* **Belt wear:** Detection of excessive belt wear, indicating potential failure.\n* **Misalignment:** Excessive vibration caused by misalignment between the motor and fan shafts.\n* **Bearing wear:** Detection of wear in the motor bearings, indicating potential failure.\n\n### Specific conditions/requirements for \"Motor\" placement:\n\n* **Priority 1:** This location is assigned the highest priority due to its criticality for monitoring.\n* **DE (Drive End):** Monitoring the \"DE\" (Drive End) of the motor shaft is recommended for capturing comprehensive data.\n* **NDE (Non-Drive End):** Monitoring the \"NDE\" (Non-Drive End) is recommended for larger motors (\\u2265 150 hp) to capture additional vibrational modes."
+              },
+              {
+                "name": "Independent Bearing",
+                "priority": 0,
+                "justification": "## Justification for \"Independent Bearing\" sensor placement location for a Belt Driven Fan:\n\nThis location is important for monitoring belt-driven fans because it is where the belt transfers power from the motor to the fan. This makes it a critical point for early fault detection, as wear or other issues in the belt or bearings can significantly impact the fan's performance and lifespan.\n\nHere's a breakdown of the key reasons why the \"Independent Bearing\" is important:\n\n* **Highest load and dynamic forces:** The belt transmits power to the fan, experiencing significant stress and potential wear.\n* **Early fault detection:** Monitoring vibrations at this location helps detect belt wear, misalignment, bearing problems, and other issues early on, preventing costly downtime.\n* **Critical for system health:** The independent bearing supports the fan shaft and directly influences its rotation and performance. Identifying issues before they become severe is crucial for maintaining system efficiency and avoiding costly repairs.\n\nTherefore, placing a sensor at the \"Independent Bearing\" is crucial for belt-driven fans to prevent costly downtime and ensure optimal system performance."
+              }
+            ]
+          }
+        }
+      ],
+      "installation_methods": [
+        {
+          "name": "Drill and Tap",
+          "description": "Recommended for permanent installations, requires drilling and tapping a hole in the machine surface.",
+          "requirements": {
+            "surface_thickness": "Mounting surface must be at least \u00bd\" thick.",
+            "general": "Mounting surface must be at least \u00bd\" thick."
+          },
+          "steps": [
+            {
+              "step": 1,
+              "title": "Installation",
+              "description": [
+                {
+                  "step": 1,
+                  "title": "Planning & Marking",
+                  "description": "Identify desired sensor location, ensure minimum 1/4\" mounting depth, mark sensor hole"
+                },
+                {
+                  "step": 2,
+                  "title": "Drilling",
+                  "description": "Use appropriate drill bit for sensor size, drill pilot hole to specified depth, remove chips"
+                },
+                {
+                  "step": 3,
+                  "title": "Tapping",
+                  "description": "Select tap matching the provided mounting screw, thread the mounting hole carefully"
+                },
+                {
+                  "step": 4,
+                  "title": "Cleaning Threads",
+                  "description": "Remove debris and burrs, use compressed air or soft brush, confirm clean threading"
+                },
+                {
+                  "step": 5,
+                  "title": "Mounting Sensor",
+                  "description": "Place the sensor, ensure correct orientation, tighten mounting screw evenly, avoid over-tightening"
+                },
+                {
+                  "step": 6,
+                  "title": "Final Check",
+                  "description": "Verify secure connection, confirm cable routing and stress relief, no obstructions to fan operation"
+                }
+              ]
+            }
+          ],
+          "videos": [
+            {
+              "id": "sensor_installation_drill_tap",
+              "title": "Sensor Installation: Drill & Tap Method",
+              "uri": "gs://proaxionsample/sample/Videos/sensor_installation_drill_tap.mp4",
+              "duration": "1:41",
+              "segments": [
+                {
+                  "start": "0:05",
+                  "end": "0:07", 
+                  "title": "Materials Required",
+                  "description": "Overview of tools and materials needed for installation"
+                },
+                {
+                  "start": "0:09",
+                  "end": "0:38",
+                  "title": "Surface Preparation",
+                  "description": "Creating a pilot hole and preparing the mounting surface",
+                  "step_reference": 1
+                },
+                {
+                  "start": "0:38",
+                  "end": "0:46",
+                  "title": "Tapping the Hole",
+                  "description": "Using a thread tap to create screw threads",
+                  "step_reference": 3
+                },
+                {
+                  "start": "0:50",
+                  "end": "1:05",
+                  "title": "Applying Thread Locker",
+                  "description": "Preparing the sensor with thread locker",
+                  "step_reference": 5
+                },
+                {
+                  "start": "1:05",
+                  "end": "1:21",
+                  "title": "Applying Silicone Sealant",
+                  "description": "Adding sealant to prevent corrosion",
+                  "step_reference": 5
+                },
+                {
+                  "start": "1:24",
+                  "end": "1:41",
+                  "title": "Hand-Tightening the Sensor",
+                  "description": "Final installation of the sensor",
+                  "step_reference": 5
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Epoxy Mount",
+          "description": "High-strength adhesive for permanent installations, suitable for various environments.",
+          "options": [
+            "Direct Mount: Attach sensor directly to a clean, flat surface.",
+            "Adapter: Use epoxy-mounting adapter for curved or uneven surfaces."
+          ],
+          "steps": [
+            {
+              "step": 1,
+              "title": "Installation",
+              "description": [
+                {
+                  "step": 1,
+                  "title": "Surface Preparation",
+                  "description": "Choose a clean, flat, and rigid mounting location for the sensor. Ensure the surface is free from oil, grease, and moisture."
+                },
+                {
+                  "step": 2,
+                  "title": "Mixing Adhesive",
+                  "description": "Mix the epoxy according to the manufacturer's instructions, ensuring a consistent and bubble-free mixture."
+                },
+                {
+                  "step": 3,
+                  "title": "Applying Adhesive",
+                  "description": "Apply a thin, even layer of adhesive to the mounting surface of the sensor and the desired location on the fan housing."
+                },
+                {
+                  "step": 4,
+                  "title": "Positioning Sensor",
+                  "description": "Carefully position the sensor on the mounting surface, ensuring proper alignment and orientation according to the sensor's specifications."
+                },
+                {
+                  "step": 5,
+                  "title": "Curing Time",
+                  "description": "Allow the epoxy to cure completely according to the manufacturer's instructions before operating the fan."
+                },
+                {
+                  "step": 6,
+                  "title": "Quality Check",
+                  "description": "Visually inspect the mounting to ensure secure attachment and proper sensor placement. Gently attempt to move the sensor to confirm its secure bonding."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Other Adapter Options",
+          "options": [
+            "Motor Fin Mount: Place sensor on motor fins without modifying motor guards.",
+            "Lifting Lug Mount: Easy installation for large equipment with lifting lugs."
+          ],
+          "steps": [
+            {
+              "step": 1,
+              "title": "Installation",
+              "description": [
+                {
+                  "step": 1,
+                  "title": "Select an Adapter Option",
+                  "description": "Choose the appropriate adapter option based on the motor type and accessibility: \n* Motor Fin Mount: For direct mounting on motor fins without modifying motor guards. \n* Lifting Lug Mount: For easy installation on large equipment with lifting lugs."
+                },
+                {
+                  "step": 2,
+                  "title": "Attach the Adapter",
+                  "description": "Follow the specific instructions for the chosen adapter option: \n* Motor Fin Mount: Securely wrap the adapter around the motor fin using the provided straps. \n* Lifting Lug Mount: Slide the adapter over the lifting lug and tighten the set screws."
+                },
+                {
+                  "step": 3,
+                  "title": "Position the Sensor",
+                  "description": "Place the sensor on the adapter, ensuring it is aligned with the desired measurement point. Refer to the sensor placement guidelines for optimal positioning."
+                },
+                {
+                  "step": 4,
+                  "title": "Secure the Sensor",
+                  "description": "Tighten the sensor mounting screws to securely fix it to the adapter. Use the recommended torque value specified in the sensor's documentation."
+                },
+                {
+                  "step": 5,
+                  "title": "Connect the Sensor",
+                  "description": "Connect the sensor cable to the monitoring system, ensuring the polarity is correct. Secure the cable to prevent damage or disconnection."
+                },
+                {
+                  "step": 6,
+                  "title": "Perform Quality Checks",
+                  "description": "Verify the sensor installation by checking: \n* Sensor alignment is correct. \n* Mounting is secure. \n* Cable connection is sound. \n* Sensor readings are within expected range."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "Magnets",
+          "description": "Not recommended due to potential movement and inaccurate readings.",
+          "steps": [
+            {
+              "step": 1,
+              "title": "Installation",
+              "description": [
+                {
+                  "step": 1,
+                  "title": "Surface Preparation",
+                  "description": "Clean the mounting surface with a solvent and a lint-free cloth. Ensure the surface is free of dirt, oil, grease, and contaminants."
+                },
+                {
+                  "step": 2,
+                  "title": "Position the Magnet",
+                  "description": "Place the magnet on the mounting surface at the desired location. Use a non-magnetic tool to help with placement."
+                },
+                {
+                  "step": 3,
+                  "title": "Attach the Magnet",
+                  "description": "Apply pressure to the magnet to ensure a secure bond. Use a non-magnetic tool or hand pressure only."
+                },
+                {
+                  "step": 4,
+                  "title": "Verify Magnet Placement",
+                  "description": "Visually inspect the mounted magnet to ensure it is firmly attached. Check that the sensor is properly positioned and the magnet is not obstructing any critical components."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "images": [
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.2n8hbictzvg.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.2n8hbictzvg.jpg",
+      "caption": "Two proximity sensors are installed on a large piece of industrial machinery. The sensors are mounte...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.6lr2lt73t04n.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.6lr2lt73t04n.jpg",
+      "caption": "The image shows a centrifugal fan housing with a direct-drive motor. The fan is mounted on a concret...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.6rzrpubt0i5j.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.6rzrpubt0i5j.jpg",
+      "caption": "A technician wearing safety glasses uses a flashlight to inspect the spot-face tool alignment on a m...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.cz2aqqk57l6e.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.cz2aqqk57l6e.jpg",
+      "caption": "A technician uses a power screwdriver to drive a screw into a tapped hole in a fan housing. The tapp...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.f7y4f33869jw.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.f7y4f33869jw.jpg",
+      "caption": "Applying adhesive to the back of a sensor before installing it on a fan housing....",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.gq3tl7h6ekxl.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.gq3tl7h6ekxl.jpg",
+      "caption": "The image shows a centrifugal fan with an adhesive-mounted vibration sensor installed on the fan hou...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.imw6npqb9mbt.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.imw6npqb9mbt.jpg",
+      "caption": "The image shows a closeup of a large industrial fan. The fan is mounted on a blue metal frame and ha...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.j9zpqei17lf2.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.j9zpqei17lf2.jpg",
+      "caption": "A technician installs an adhesive vibration sensor onto the housing of an industrial fan. The sensor...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.jvrikm6jr8cn.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.jvrikm6jr8cn.jpg",
+      "caption": "The image shows a centrifugal fan with a yellow housing and a blue inlet. The fan is mounted on a co...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.oii21q7a0sh4.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.oii21q7a0sh4.jpg",
+      "caption": "A diagram showing the layout of a fan or other machine. The components labeled are the motor NDE (no...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.psd2ci67xg6x.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.psd2ci67xg6x.jpg",
+      "caption": "A motor with two blue bearing housings and a metal shaft. Two vibration sensors are mounted on the b...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.q4g0mttrmf6r.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.q4g0mttrmf6r.jpg",
+      "caption": "The image shows a side view of a large industrial fan or blower motor. It is mounted on a steel fram...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.seh4nr1xvd0j.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.seh4nr1xvd0j.jpg",
+      "caption": "A photo of a sensor installed on a fan housing. The sensor is mounted on a flat surface using an adh...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.t0c3ao4pcqvh.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.t0c3ao4pcqvh.jpg",
+      "caption": "The image shows a small industrial fan or blower sitting on a steel frame outdoors. There is a prote...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    },
+    {
+      "id": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.v6z5r82ijyz6.jpg",
+      "filename": "1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU_inline_kix.v6z5r82ijyz6.jpg",
+      "caption": "An image of a technician holding an adhesive spray can next to an industrial fan housing. The fan ho...",
+      "section": "Overview of how to install and set up sensors for the fan (or other machine): > Adhesive Mount Installation - steps"
+    }
+  ],
+  "_metadata": {
+    "id": "kb_59a63abb_20250227",
+    "created_at": "2025-02-27T01:59:25.174170",
+    "version": "1.0",
+    "type": "comprehensive_kb",
+    "source_extractions": [
+      "doc_25ca29da_20250227.json"
+    ]
+  }
+}
