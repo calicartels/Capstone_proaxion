@@ -35,10 +35,10 @@ const MTCInstructions: React.FC = () => {
       <MTCInstructionSteps instruction={instructions[currentPage]} />
       <div className="instructions-navigation">
         {currentPage > 0 && (
-          <button onClick={handleBack} className="nav-button">Back</button>
+          <button onClick={handleBack} className="nav-button back">Back</button>
         )}
         {currentPage < totalPages - 1 && (
-          <button onClick={handleNext} className="nav-button">Next</button>
+          <button onClick={handleNext} className="nav-button next">Next</button>
         )}
       </div>
     </div>
