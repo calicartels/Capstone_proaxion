@@ -1,0 +1,63 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 250px;
+  height: 100%;
+  background-color: #333;
+  color: white;
+  transform: translateX(-200%);
+  transition: transform 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+.sidebar button {
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
+  padding: 1rem;
+  text-align: right; /* Right-align the text */
+  width: 100%; /* Ensure the button takes the full width */
+  font-size: 0.8rem; /* Adjust the font size as needed */
+}
+
+.close-button {
+  background: none;
+  border: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+  padding: 0;
+  margin: 0;
+}
+
+.close-button:hover {
+  background: none;
+  border: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-grow: 1;
+}
+
+.sidebar li {
+  padding: 10px 20px;
+  cursor: pointer; /* Add this line to change the cursor to a pointer */
+  border-bottom: none; /* Remove the bottom border */
+  user-select: none; /* Prevent text selection */
+}
+
+.sidebar li:hover {
+  color: #f0f0f0; /* Change text color on hover */
+}

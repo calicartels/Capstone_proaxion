@@ -1,0 +1,36 @@
+.mtc-instructions {
+  padding: 1rem;
+  border-radius: 5px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.mtc-instructions h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.instructions-content p {
+  margin: 1rem 0; /* Increased margin for better readability */
+  text-align: left;
+}
+
+.instructions-navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 1rem;
+}
+
+.nav-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #B4D03E;
+  color: #000;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  opacity: 0.9;
+}

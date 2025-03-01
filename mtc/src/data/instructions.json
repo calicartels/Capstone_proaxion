@@ -1,0 +1,113 @@
+[
+  {
+    "title": "Introduction",
+    "content": [
+      {
+        "subtitle": "Parts",
+        "text": [
+          "This machine will require 3 or 4 sensors. Each sensor comes with a 316 SS threaded ¼”-28 stud for screwing the sensor into a threaded hole on the machine surface."
+        ]
+      },
+      {
+        "subtitle": "Machine Surface",
+        "text": [
+          "Sensors require mounting surfaces of the machine to have wall thickness of ½” or greater for threaded studs."
+        ]
+      },
+      {
+        "subtitle": "Note on Dealing with Shrouds and Guards",
+        "text": [
+          "Use a hole saw so the sensor can protrude out of the guard. Modify the shroud to mount NDE sensors. Use a cutting wheel to modify guards easily.",
+          "Do not mount sensors directly on fan shrouds. Do not fully encase sensor in guard or shroud."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Step 1",
+    "content": [
+      {
+        "subtitle": "Sensor Location and Orientation",
+        "text": [
+          "Sensors should be mounted either horizontally or vertically at 3, 6, 9, or 12 o’clock. The preferred mount is 12 o’clock. The axis of the sensor should align with the machine’s shaft axis.",
+          "If you can’t mount the sensor to this orientation, please consult our guide on alternatives."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Step 2",
+    "content": [
+      {
+        "subtitle": "Drill the Machine",
+        "text": [
+          "Use a spot face tool to machine a flat surface.",
+          "Drill a hole to a minimum of 11/32” (8.7mm)."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Step 3",
+    "content": [
+      {
+        "subtitle": "Tap the Machine",
+        "text": [
+          "Tap hole for ¼”-28 thread, using a bottoming tap for blind holes.",
+          "Clean metal shavings and fillings from hole."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Step 4",
+    "content": [
+      {
+        "subtitle": "Seal the Surface",
+        "text": [
+          "Apply silicone sealant to the surface of the spot face.",
+          "This will prevent corrosion of the machine surface."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Step 5",
+    "content": [
+      {
+        "subtitle": "Attach the Stud to the Sensor",
+        "text": [
+          "Apply thread locker to the stud threads.",
+          "We recommend Vibra-Tite(R) 122.",
+          "Hand tighten the stud threads into the sensor base."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Step 6",
+    "content": [
+      {
+        "subtitle": "Attach the Sensor to the Machine",
+        "text": [
+          "Apply thread locker to the sensor stud.",
+          "Hand tighten the sensor to the machine.",
+          "Take a photo of the QR code to identify the sensor in the Fulcrum mobile app."
+        ]
+      }
+    ]
+  },
+  {
+    "title": "Step 7",
+    "content": [
+      {
+        "subtitle": "Final Adjustment",
+        "text": [
+          "Using channel locks, tighten the sensor so that the X-axis or Y-axis is aligned with the machine’s shaft axis of rotation.",
+          "Be sure to use the channel locks on the steel part of the sensor, not the plastic housing.",
+          "Do not tighten more than a ¼ turn more than the hand-tightened position."
+        ]
+      }
+    ]
+  }
+]

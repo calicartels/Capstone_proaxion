@@ -1,0 +1,39 @@
+.instructions-container {
+  border: 1px solid white; /* Add a 1px white border */
+  padding: 10px; /* Optional: Add some padding inside the border */
+  height: 70vh; /* Make the container span the height of the viewport */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  position: relative; /* Ensure the buttons can be positioned absolutely */
+}
+
+.instructions-navigation {
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  bottom: 60px; /* Position the buttons above the bottom white line */
+  width: 100%; /* Make the navigation span the full width */
+  padding: 0 10px; /* Add some padding to the sides */
+}
+
+.nav-button {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 3px;
+  background-color: #B4D03E;
+  color: #000;
+  cursor: pointer;
+}
+
+.nav-button:hover {
+  opacity: 0.9;
+}
+
+.nav-button.back {
+  position: absolute;
+  left: 30px;
+}
+
+.nav-button.next {
+  position: absolute;
+  right: 70px;
+}
