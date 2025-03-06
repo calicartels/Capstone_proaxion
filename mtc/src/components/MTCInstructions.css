@@ -1,6 +1,6 @@
 .instructions-container {
   border: 1px solid white; /* Add a 1px white border */
-  padding: 10px; /* Optional: Add some padding inside the border */
+  padding: 0px; /* Optional: Add some padding inside the border */
   height: 70vh; /* Make the container span the height of the viewport */
   box-sizing: border-box; /* Include padding and border in the element's total width and height */
   position: relative; /* Ensure the buttons can be positioned absolutely */
@@ -9,19 +9,27 @@
 .instructions-navigation {
   display: flex;
   justify-content: space-between;
+  align-items: center; /* Vertically align items */
   position: absolute;
-  bottom: 60px; /* Position the buttons above the bottom white line */
-  width: 100%; /* Make the navigation span the full width */
-  padding: 0 10px; /* Add some padding to the sides */
+  bottom: 10px;
+  width: 100%;
+  padding: 0 10px;
+  height: 60px;  /* Fixed height for consistent positioning */
 }
 
-.nav-button {
+.nav-button,
+.nav-button-placeholder {
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 3px;
   background-color: #B4D03E;
   color: #000;
   cursor: pointer;
+  /* Ensure placeholders have same size as buttons but no background/clickability */
+}
+
+.nav-button-placeholder {
+  visibility: hidden;
 }
 
 .nav-button:hover {
@@ -31,9 +39,19 @@
 .nav-button.back {
   position: absolute;
   left: 30px;
+  z-index: 10; /* Ensure the button is on top */
 }
 
 .nav-button.next {
   position: absolute;
   right: 70px;
+  z-index: 10;
+}
+
+.see-video-button-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateX(-20px); /* Moves the container 20px to the left */
 }

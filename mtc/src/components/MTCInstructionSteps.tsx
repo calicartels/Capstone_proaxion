@@ -13,12 +13,22 @@ interface InstructionPage {
 
 interface MTCInstructionStepsProps {
   instruction: InstructionPage;
+  pageIndex: number;
 }
 
-const MTCInstructionSteps: React.FC<MTCInstructionStepsProps> = ({ instruction }) => {
+const MTCInstructionSteps: React.FC<MTCInstructionStepsProps> = ({ instruction, pageIndex }) => {
   return (
     <div className="mtc-instructions">
       <h2>{instruction.title}</h2>
+      {pageIndex >= 1 && pageIndex <= 7 && (
+        <div className="instruction-step-image-container">
+          <img 
+            src={`/assets/dat_step${pageIndex}.png`} 
+            alt={`Step ${pageIndex} illustration`} 
+            className="instruction-step-image" 
+          />
+        </div>
+      )}
       <div className="instructions-content">
         {instruction.content.map((section, index) => (
           <div key={index}>

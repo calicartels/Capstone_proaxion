@@ -34,3 +34,9 @@
 .nav-button:hover {
   opacity: 0.9;
 }
+
+.instruction-step-image {
+  height: 150px;
+  width: auto;
+  object-fit: contain;  /* Ensures the image scales proportionally */
+}
