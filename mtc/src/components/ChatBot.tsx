@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import ChatBotInput from './ChatBotInput';
 import './ChatBot.css';
+import ReactMarkdown from 'react-markdown';
 
 interface Message {
   text: string;
@@ -8,53 +9,44 @@ interface Message {
   sources?: Array<{ id: string; title: string }>;
 }
 
+interface ConversationItem {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
 const ChatBot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
+  const [conversationHistory, setConversationHistory] = useState<ConversationItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
-  const [initialMessage, setInitialMessage] = useState(true);
+  const [initialPromptSent, setInitialPromptSent] = useState(false);
+  const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  // Fetch context from current screen when component mounts
+  // Auto-scroll to bottom when messages change
   useEffect(() => {
-    if (initialMessage) {
-      handleContextUpdate("Tell me about installing sensors for a fan");
-      setInitialMessage(false);
-    }
-  }, [initialMessage]);
+    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+  }, [messages]);
 
-  const handleContextUpdate = async (context: string) => {
-    setIsLoading(true);
-    
-    try {
-      const response = await fetch('http://localhost:8000/api/chat', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ message: context }),
-      });
-      
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
-      }
-      
-      const data = await response.json();
-      
-      // Add bot response to chat
+  // Update conversation history when messages change
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  useEffect(() => {
+    const newHistory = messages.map(msg => ({
+      role: msg.sender === 'user' ? 'user' : 'assistant',
+      content: msg.text
+    }));
+    setConversationHistory(newHistory);
+  }, [messages]);
+
+  // Send initial welcome message on component mount
+  useEffect(() => {
+    if (!initialPromptSent) {
+      // Display welcome message immediately without API call
       setMessages([{
-        text: data.text,
-        sender: 'bot',
-        sources: data.sources
-      }]);
-    } catch (error) {
-      console.error('Error updating context:', error);
-      setMessages([{
-        text: 'I encountered an error while retrieving information. Please try again.',
+        text: "Hello! I'm ProAxion Assistant, here to help you with sensor installation, machine monitoring, and troubleshooting. How can I assist you today?",
         sender: 'bot'
       }]);
-    } finally {
-      setIsLoading(false);
+      setInitialPromptSent(true);
     }
-  };
+  }, [initialPromptSent]);
 
   const handleSendMessage = async (message: string) => {
     // Add user message to chat
@@ -66,25 +58,32 @@ const ChatBot: React.FC = () => {
     setIsLoading(true);
     
     try {
+      console.log("Sending message to API:", message);
+      console.log("With history:", conversationHistory);
+      
       const response = await fetch('http://localhost:8000/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({ 
+          message,
+          history: conversationHistory 
+        }),
       });
       
       if (!response.ok) {
-        throw new Error('Network response was not ok');
+        throw new Error(`Network response was not ok: ${response.status}`);
       }
       
       const data = await response.json();
+      console.log("Received response:", data);
       
       // Add bot response to chat
       setMessages((prevMessages) => [
         ...prevMessages,
         {
-          text: data.text,
+          text: data.text || "I couldn't process that request. Could you try rephrasing your question?",
           sender: 'bot',
           sources: data.sources
         },
@@ -109,7 +108,11 @@ const ChatBot: React.FC = () => {
       <div className="chatbot-messages">
         {messages.map((message, index) => (
           <div key={index} className={`chatbot-message ${message.sender}`}>
-            {message.text}
+            {message.sender === 'bot' ? (
+              <ReactMarkdown>{message.text}</ReactMarkdown>
+            ) : (
+              <p>{message.text}</p> // Wrap user messages in paragraph tags
+            )}
             {message.sources && message.sources.length > 0 && (
               <div className="message-sources">
                 <small>
@@ -128,6 +131,7 @@ const ChatBot: React.FC = () => {
             </div>
           </div>
         )}
+        <div ref={messagesEndRef} />
       </div>
       <ChatBotInput onSendMessage={handleSendMessage} />
     </div>

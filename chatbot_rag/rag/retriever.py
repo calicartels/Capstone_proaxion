@@ -21,7 +21,7 @@ class Retriever:
         self.document_store = document_store or DocumentStore()
         self.model = GenerativeModel(TEXT_MODEL)
     
-    def retrieve_for_query(self, query: str, doc_ids: List[str] = None, max_chunks: int = 5) -> List[Dict]:
+    def retrieve_for_query(self, query: str, doc_ids: List[str] = None, max_chunks: int = 3) -> List[Dict]:
         """
         Retrieve relevant chunks for a query.
         
@@ -93,13 +93,6 @@ class Retriever:
     def _get_relevance_score(self, query: str, text: str) -> float:
         """
         Use the LLM to determine the relevance of text to a query.
-        
-        Args:
-            query (str): User query
-            text (str): Text to evaluate
-            
-        Returns:
-            float: Relevance score between 0 and 1
         """
         prompt = f"""
         Query: {query}
@@ -107,11 +100,7 @@ class Retriever:
         Text: {text}
         
         On a scale from 0 to 1, how relevant is the Text to the Query?
-        Provide only a single floating-point number as your answer, where:
-        - 0 means completely irrelevant
-        - 1 means perfectly relevant
-        
-        Score:
+        Provide only a single floating-point number as your answer.
         """
         
         try:
@@ -122,12 +111,20 @@ class Retriever:
             
             # Try to convert to a float
             try:
+                # First, try direct conversion
                 score = float(score_text)
-                return max(0.0, min(1.0, score))  # Ensure between 0 and 1
+                return max(0.0, min(1.0, score))
             except ValueError:
-                print(f"⚠️ Could not parse relevance score: {score_text}")
-                return 0.5  # Default to medium relevance
-                
+                # If that fails, try to extract a number from the text
+                import re
+                match = re.search(r'(\d+\.\d+)', score_text)
+                if match:
+                    score = float(match.group(1))
+                    return max(0.0, min(1.0, score))
+                else:
+                    print(f"⚠️ Could not parse relevance score: {score_text}")
+                    return 0.5  # Default to medium relevance
+                    
         except Exception as e:
             print(f"⚠️ Error getting relevance score: {e}")
             return 0.5  # Default to medium relevance

@@ -5,7 +5,8 @@ from typing import Dict, List, Any
 import vertexai
 from vertexai.generative_models import GenerativeModel
 
-from config.settings import TEXT_MODEL, MAX_CONTEXT_LENGTH
+from config import settings
+from config.settings import TEXT_MODEL, MAX_CONTEXT_LENGTH, MODEL_TEMPERATURE
 from rag.retriever import Retriever
 
 class Generator:
@@ -19,19 +20,11 @@ class Generator:
             retriever (Retriever, optional): Retriever to use.
         """
         self.retriever = retriever or Retriever()
-        self.model = GenerativeModel(TEXT_MODEL)
-    
-    def generate_response(self, context: str, doc_ids: List[str] = None) -> Dict:
-        """
-        Generate a response using RAG.
-        
-        Args:
-            context (str): Current frontend context or query
-            doc_ids (List[str], optional): Document IDs to search
-            
-        Returns:
-            Dict: Generated response with metadata
-        """
+        self.model = GenerativeModel("gemini-2.0-flash-001")    
+
+    # In chatbot_rag/rag/generator.py
+    def generate_response(self, context: str, doc_ids: List[str] = None, history: List[Dict] = None) -> Dict:
+        """Generate a response using RAG."""
         # Retrieve relevant chunks
         chunks = self.retriever.retrieve_for_query(context, doc_ids)
         
@@ -45,8 +38,8 @@ class Generator:
         # Prepare context from chunks
         context_text = self._prepare_context(chunks)
         
-        # Generate response
-        response = self._generate_with_context(context, context_text)
+        # Generate response with history if provided
+        response = self._generate_with_context(context, context_text, history)
         
         # Extract sources for attribution
         sources = self._extract_sources(chunks)
@@ -56,6 +49,7 @@ class Generator:
             "has_context": True,
             "sources": sources
         }
+
     
     def _prepare_context(self, chunks: List[Dict]) -> str:
         """
@@ -91,33 +85,54 @@ class Generator:
         
         return context_text
     
-    def _generate_with_context(self, query: str, context_text: str) -> str:
-        """
-        Generate a response using the LLM with context.
+    def _generate_with_context(self, query: str, context_text: str, history=None) -> str:
+        """Generate a response using the LLM with context and history."""
+        history_text = ""
+        if history and len(history) > 0:
+            history_text = "Previous conversation:\n"
+            for item in history:
+                role = item.get("role", "")
+                content = item.get("content", "")
+                if role == "user":
+                    history_text += f"User: {content}\n"
+                elif role == "assistant":
+                    history_text += f"Assistant: {content}\n"
+            history_text += "\n"
         
-        Args:
-            query (str): User query
-            context_text (str): Context from retrieved documents
-            
-        Returns:
-            str: Generated response
-        """
         prompt = f"""
-        You are a helpful assistant for ProAxion sensor installation and machine monitoring. 
-        You provide specific, accurate information based on the provided context.
-        If you don't know the answer or if it's not covered in the context, say so clearly.
+        You are ProAxion Assistant, a helpful and knowledgeable expert on sensor installation and machine monitoring.
+        You communicate in a clear, professional manner with concise, well-structured responses.
         
-        Context:
+        {history_text}
+        
+        CONTEXT INFORMATION:
         {context_text}
         
-        Current user situation: {query}
+        USER QUERY: {query}
         
-        Based on the context, provide a helpful and accurate response about sensor installation, 
-        configuration, or troubleshooting. Be specific and provide details from the context.
+        Based on the context information provided, create a helpful, focused response that directly addresses the user's query.
+        
+        Your response should:
+        1. Be clear, concise and well-structured using markdown formatting
+        2. Focus specifically on answering the user's query rather than providing general information 
+        3. Use bullet points and headings to organize information
+        4. Provide practical, actionable guidance when appropriate
+        5. Be friendly but professional in tone
+        
+        DO NOT include references to the "context information" or say phrases like "based on the provided context".
+        Simply answer directly as if you know this information naturally.
         """
         
         try:
-            response = self.model.generate_content(prompt)
+            generation_config = {
+                "temperature": 0.2,
+                "max_output_tokens": 800,
+            }
+            
+            response = self.model.generate_content(
+                prompt,
+                generation_config=generation_config
+            )
             return response.text.strip()
         except Exception as e:
             print(f"⚠️ Error generating response: {e}")
