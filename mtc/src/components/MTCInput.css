@@ -14,9 +14,20 @@ select {
   margin-bottom: 20px; /* Add space below the select box */
 }
 
+.mtc-input-dropdown {
+  width: 100%;
+}
+
+.mtc-input-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
 .button-container {
   display: flex;
-  gap: 5rem; /* Adjust the gap between buttons as needed */
+  gap: 5rem; /* Gap between buttons */
 }
 
 .button-container button {
@@ -28,4 +39,4 @@ select {
 
 .button-container button:hover {
   background-color: #e0e0e05e; /* Change background color on hover */
-  }
+}

@@ -127,3 +127,8 @@ select option {
   background-color: #B4D03E; /* Change background color to #B4D03E on hover */
   color: black; /* Change text color to black on hover */
 }
+
+.horsepower-input {
+  font-size: 1.5rem; /* Adjust as needed */
+  padding: 0.5rem;
+}
