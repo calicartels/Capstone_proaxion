@@ -1,3 +1,4 @@
 credentials/
 .venv/
+venv/
 *.pyc
