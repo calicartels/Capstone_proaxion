@@ -11,6 +11,7 @@ interface MachineTypeConfigurationProps {
 function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps) {
   const [step, setStep] = useState(1);
   const [activeButton, setActiveButton] = useState<string | null>(null);
+  const [horsepower, setHorsepower] = useState<string>("");
 
   const handleNextClick = () => {
     setActiveButton('next');
@@ -53,6 +54,19 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
           />
         )}
         {step === 3 && (
+          <div className="horsepower-input-container">
+            <h2>Horsepower</h2>
+            <input 
+              id="horsepower" 
+              type="number" 
+              placeholder="Enter horsepower" 
+              value={horsepower}
+              onChange={(e) => setHorsepower(e.target.value)}
+              className="horsepower-input"
+            />
+          </div>
+        )}
+        {step === 4 && (
           <div className="instructions-chatbot-container">
             <div className="instructions">
               <MTCInstructions />
@@ -78,7 +92,7 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
               Back
             </button>
           )}
-          {step < 3 ? (
+          {step < 4 ? (
             <button 
               onClick={handleNextClick} 
               className={activeButton === 'next' ? 'active' : ''}

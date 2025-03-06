@@ -24,7 +24,7 @@
     ]
   },
   {
-    "title": "Step 1",
+    "title": "Step 1 of 7",
     "content": [
       {
         "subtitle": "Sensor Location and Orientation",
@@ -36,7 +36,7 @@
     ]
   },
   {
-    "title": "Step 2",
+    "title": "Step 2 of 7",
     "content": [
       {
         "subtitle": "Drill the Machine",
@@ -48,7 +48,7 @@
     ]
   },
   {
-    "title": "Step 3",
+    "title": "Step 3 of 7",
     "content": [
       {
         "subtitle": "Tap the Machine",
@@ -60,7 +60,7 @@
     ]
   },
   {
-    "title": "Step 4",
+    "title": "Step 4 of 7",
     "content": [
       {
         "subtitle": "Seal the Surface",
@@ -72,7 +72,7 @@
     ]
   },
   {
-    "title": "Step 5",
+    "title": "Step 5 of 7",
     "content": [
       {
         "subtitle": "Attach the Stud to the Sensor",
@@ -85,7 +85,7 @@
     ]
   },
   {
-    "title": "Step 6",
+    "title": "Step 6 of 7",
     "content": [
       {
         "subtitle": "Attach the Sensor to the Machine",
@@ -98,7 +98,7 @@
     ]
   },
   {
-    "title": "Step 7",
+    "title": "Step 7 of 7",
     "content": [
       {
         "subtitle": "Final Adjustment",
