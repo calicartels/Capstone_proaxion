@@ -12,6 +12,7 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
   const [step, setStep] = useState(1);
   const [activeButton, setActiveButton] = useState<string | null>(null);
   const [horsepower, setHorsepower] = useState<string>("");
+  const [installationMethod, setInstallationMethod] = useState<string>("");
 
   const handleNextClick = () => {
     setActiveButton('next');
@@ -35,6 +36,14 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
   const step2Options = [
     { value: 'PT1', label: 'Belt-Driven' },
     { value: 'PT2', label: 'Direct Drive' },
+  ];
+
+  const installationOptions = [
+    { value: 'DrillTap', label: 'Drill and Tap (preferred)' },
+    { value: 'Epoxy', label: 'Epoxy Adhesive' },
+    { value: 'LiftingLug', label: 'Lifting Lug' },
+    { value: 'FinMount', label: 'Fin Mount' },
+    { value: 'Magnet', label: 'Magnet (not preferred)' },
   ];
 
   return (
@@ -67,6 +76,14 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
           </div>
         )}
         {step === 4 && (
+          <MTCInput
+            title="Installation Method"
+            options={installationOptions}
+            value={installationMethod}
+            onChange={(e) => setInstallationMethod(e.target.value)}
+          />
+        )}
+        {step === 5 && (
           <div className="instructions-chatbot-container">
             <div className="instructions">
               <MTCInstructions />
@@ -92,7 +109,7 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
               Back
             </button>
           )}
-          {step < 4 ? (
+          {step < 5 ? (
             <button 
               onClick={handleNextClick} 
               className={activeButton === 'next' ? 'active' : ''}
