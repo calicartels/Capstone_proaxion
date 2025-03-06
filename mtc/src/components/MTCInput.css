@@ -15,8 +15,7 @@ select {
 }
 
 .mtc-input-dropdown {
-  width: 100%; /* twice as wide as before */
-  /* You can also adjust other styling properties as needed */
+  width: 100%;
 }
 
 .mtc-input-container {
@@ -28,7 +27,7 @@ select {
 
 .button-container {
   display: flex;
-  gap: 5rem; /* Adjust the gap between buttons as needed */
+  gap: 5rem; /* Gap between buttons */
 }
 
 .button-container button {
