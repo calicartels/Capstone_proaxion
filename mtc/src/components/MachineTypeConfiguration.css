@@ -77,8 +77,9 @@ select option {
 .instructions-chatbot-container {
   display: flex;
   width: 100%;
-  flex-grow: 1; /* Take up remaining space */
+  flex-grow: 1;
   justify-content: space-between;
+  margin-bottom: 3rem; /* Add margin at bottom to make room for buttons */
 }
 
 .instructions-chatbot-container .instructions {
@@ -92,12 +93,13 @@ select option {
 
 .footer-buttons {
   display: flex;
-  justify-content: center; /* Center the buttons horizontally */
-  gap: 5rem; /* Adjust the gap between buttons as needed */
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  justify-content: center;
+  gap: 5rem;
+  margin-top: 2rem;
+  position: relative; /* Change from absolute to relative */
+  bottom: auto; /* Remove fixed positioning */
+  left: auto;
+  transform: none;
 }
 
 .button-container button,

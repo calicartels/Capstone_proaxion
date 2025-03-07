@@ -10,17 +10,23 @@ interface MTCInputProps {
   title: string;
   options: Option[];
   value?: string;
-  onChange?: React.ChangeEventHandler<HTMLSelectElement>;
+  onChange?: (value: string) => void;
 }
 
-export default function MTCInput({ title, options, value, onChange }: MTCInputProps) {
+const MTCInput: React.FC<MTCInputProps> = ({ title, options, value, onChange }) => {
+  const handleChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    if (onChange) {
+      onChange(e.target.value);
+    }
+  };
+
   return (
     <div className="mtc-input-container">
       <h2>{title}</h2>
       <select 
-          value={value} 
-          onChange={onChange} 
-          className="mtc-input-dropdown"
+        value={value || options[0]?.value} 
+        onChange={handleChange} 
+        className="mtc-input-dropdown"
       >
         {options.map((option) => (
           <option key={option.value} value={option.value}>
@@ -30,4 +36,6 @@ export default function MTCInput({ title, options, value, onChange }: MTCInputPr
       </select>
     </div>
   );
-}
+};
+
+export default MTCInput;

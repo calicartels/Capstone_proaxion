@@ -1,0 +1,60 @@
+.video-player-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    border: 1px solid rgba(180, 208, 62, 0.5);
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #2a2a2a;
+  }
+  
+  .video-player-container h2 {
+    color: rgba(180, 208, 62, 0.9);
+    padding: 10px;
+    margin: 0;
+    text-align: center;
+    border-bottom: 1px solid rgba(180, 208, 62, 0.3);
+  }
+  
+  .video-wrapper {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    width: 100%;
+    height: 0;
+  }
+  
+  .installation-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+  }
+  
+  .step-indicators {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    overflow-y: auto;
+    max-height: 200px;
+  }
+  
+  .step-indicator {
+    padding: 8px 12px;
+    margin: 2px 0;
+    border-radius: 4px;
+    background-color: #3a3a3a;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .step-indicator:hover {
+    background-color: rgba(180, 208, 62, 0.4);
+  }
+  
+  .step-indicator.active {
+    background-color: rgba(180, 208, 62, 0.8);
+    color: #000;
+    font-weight: bold;
+  }
