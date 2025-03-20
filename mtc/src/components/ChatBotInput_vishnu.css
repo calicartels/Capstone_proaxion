@@ -1,0 +1,35 @@
+.chatbot-input-container {
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centers the form horizontally */
+  margin-top: auto; /* Push the container to the bottom */
+}
+
+.chatbot-input-container form {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  align-items: center; /* This ensures both elements are vertically centered */
+}
+
+.chatbot-input {
+  flex: 1;
+  height: 40px;
+  padding: 0.5rem;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+    border-radius: 5px;
+  outline: none;
+}
+
+.chatbot-send-button {
+  height: 40px;
+  padding: 0.5rem;
+  border: 1px solid #B4D03E;
+  border-radius: 5px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+}
