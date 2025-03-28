@@ -1,0 +1,24 @@
+.change-sensor-inputs {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.change-sensor-inputs > div {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between; /* Position one button to the left and the other to the right */
+  margin-top: 20px; /* Add spacing above the buttons */
+}
+
+.navigation-buttons button {
+  padding: 10px 20px; /* Adjust padding for consistent button size */
+  font-size: 16px; /* Ensure consistent font size */
+}
