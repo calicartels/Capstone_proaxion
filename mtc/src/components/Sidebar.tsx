@@ -9,7 +9,9 @@ interface SidebarProps {
   onContactUsClick: () => void;
   onEnhanceSensorInstallsClick: () => void;
   onOptimizeMachineDataClick: () => void;
-  onCreateMaintenancePlan: () => void;  // New prop
+  onCreateMaintenancePlan: () => void;
+  onChangeSensorClick: () => void;
+  onChangeMachineComponentClick: () => void;
 }
 
 export function Sidebar({
@@ -21,7 +23,9 @@ export function Sidebar({
   onContactUsClick,
   onEnhanceSensorInstallsClick,
   onOptimizeMachineDataClick,
-  onCreateMaintenancePlan  // Make sure you destructure it!
+  onCreateMaintenancePlan,
+  onChangeSensorClick,
+  onChangeMachineComponentClick
 }: SidebarProps) {
   return (
     <div className={`sidebar ${isOpen ? "sidebar-open" : ""}`}>
@@ -29,9 +33,11 @@ export function Sidebar({
       <ul>
         <li onClick={onHomeClick}>Home</li>
         <li onClick={onMachineTypeConfigurationClick}>Monitor a New Machine</li>
-        <li onClick={onEnhanceSensorInstallsClick}>Update an Existing Machine</li>
         <li onClick={onMachineHealthClick}>Trouble Shoot a Machine</li>
+        <li onClick={onEnhanceSensorInstallsClick}>Update an Existing Machine</li>
         <li onClick={onOptimizeMachineDataClick}>Add Machine Data</li>
+        <li onClick={onChangeSensorClick}>Change a Sensor</li>
+        <li onClick={onChangeMachineComponentClick}>Change a Machine Component</li>
         <li onClick={onCreateMaintenancePlan}>Create a Maintenance Plan</li>
         <li onClick={onContactUsClick}>Contact Us</li>
       </ul>

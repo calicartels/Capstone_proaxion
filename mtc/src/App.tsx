@@ -5,7 +5,7 @@ import MachineTypeConfiguration from './components/MachineTypeConfiguration';
 import MachineHealth from './components/MachineHealth';
 import EnhanceSensorInstalls from './components/EnhanceSensorInstalls';
 import OptimizeMachineData from './components/OptimizeMachineData';
-import CreateMaintenancePlan from './components/CreateMaintenancePlan';
+import CreateMaintenancePlan from './components/create_maintenance_plan/CreateMaintenancePlan';
 import ContactUs from './components/ContactUs';
 import { Sidebar } from './components/Sidebar';
 import './App.css';
