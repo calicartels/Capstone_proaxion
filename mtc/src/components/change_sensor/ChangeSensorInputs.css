@@ -14,11 +14,16 @@
 
 .navigation-buttons {
   display: flex;
-  justify-content: space-between; /* Position one button to the left and the other to the right */
+  justify-content: center; /* Center align the buttons */
+  gap: 20px; /* Add spacing between the buttons */
   margin-top: 20px; /* Add spacing above the buttons */
 }
 
 .navigation-buttons button {
   padding: 10px 20px; /* Adjust padding for consistent button size */
   font-size: 16px; /* Ensure consistent font size */
+}
+
+.change-sensor-inputs select {
+  width: 25%; /* Set select boxes to half the width of their container */
 }

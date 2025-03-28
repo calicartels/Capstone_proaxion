@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './ChangeSensorInputs.css'; // Import CSS for styling
+import './ChangeSensorInputs.css';
 
 interface ChangeSensorInputsProps {
   onSubmit: (formData: Record<string, string>) => void;
@@ -124,9 +124,8 @@ const ChangeSensorInputs: React.FC<ChangeSensorInputsProps> = ({ onSubmit }) => 
 
   return (
     <form className="change-sensor-inputs" onSubmit={handleSubmit}>
-      <h2>Change Sensor Form</h2>
       <div>
-        <label>{questions[currentQuestion].label}</label>
+        <h2>{questions[currentQuestion].label}</h2>
         {questions[currentQuestion].input}
       </div>
       <div className="navigation-buttons">
