@@ -27,3 +27,12 @@
 .change-sensor-inputs select {
   width: 25%; /* Set select boxes to half the width of their container */
 }
+
+.change-sensor-inputs input[type="text"] {
+  height: 2.5rem; /* Match the height of ChangeMachinePartInput text input boxes */
+  padding: 0.5rem; /* Add padding for better appearance */
+  font-size: 1rem; /* Ensure consistent font size */
+  border: 1px solid #ccc; /* Add a border for consistency */
+  border-radius: 4px; /* Add rounded corners for a modern look */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
