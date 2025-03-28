@@ -14,12 +14,24 @@ interface ConversationItem {
   content: string;
 }
 
+interface MachineContext {
+  machineType: string;
+  transmissionType: string;
+}
+
 const ChatBot: React.FC = () => {
   const [messages, setMessages] = useState<Message[]>([]);
   const [conversationHistory, setConversationHistory] = useState<ConversationItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);
   const [initialPromptSent, setInitialPromptSent] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+
+  // This would come from your application state (e.g., context)
+  // For now, I'll hardcode it as an example
+  const machineContext: MachineContext = {
+    machineType: 'Fan',
+    transmissionType: 'Belt-Driven'
+  };
 
   // Auto-scroll to bottom when messages change
   useEffect(() => {
@@ -38,7 +50,7 @@ const ChatBot: React.FC = () => {
   // Send initial welcome message on component mount
   useEffect(() => {
     if (!initialPromptSent) {
-      const welcomeMessage = `Hello! I'm ProAxion Assistant. How can I assist you today?`;
+      const welcomeMessage = `Hello! I'm ProAxion Assistant. I can help you with ${machineContext.machineType} machines and ${machineContext.transmissionType} systems. How can I assist you today?`;
       
       setMessages([{
         text: welcomeMessage,
@@ -46,7 +58,7 @@ const ChatBot: React.FC = () => {
       }]);
       setInitialPromptSent(true);
     }
-  }, [initialPromptSent]);
+  }, [initialPromptSent, machineContext.machineType, machineContext.transmissionType]);
 
   const handleSendMessage = async (message: string) => {
     // Add user message to chat
@@ -66,8 +78,11 @@ const ChatBot: React.FC = () => {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ 
-          message,
-          history: conversationHistory
+          message: message,
+          history: conversationHistory,
+          machineContext: machineContext,
+          // You can specify specific document IDs if needed
+          doc_ids: ["1k1I7_tVuTaRePPTirBd8qybUFxQlemVqsr0SFlXo4RU"] 
         }),
       });
       
@@ -92,7 +107,7 @@ const ChatBot: React.FC = () => {
       setMessages((prevMessages) => [
         ...prevMessages,
         {
-          text: 'I encountered an error while generating a response. Please try again.',
+          text: 'I encountered an error connecting to the AI assistant. Please check that the backend server is running at http://localhost:8000 and that your Google Cloud credentials are properly set up.',
           sender: 'bot'
         },
       ]);
