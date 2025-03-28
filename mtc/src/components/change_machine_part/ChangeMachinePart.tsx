@@ -1,4 +1,5 @@
 import React from 'react';
+import ChangeMachinePartInput from './ChangeMachinePartInput'; // Import ChangeMachinePartInput
 
 interface ChangeMachinePartProps {
   onHomeClick: () => void;
@@ -11,12 +12,11 @@ const ChangeMachinePart: React.FC<ChangeMachinePartProps> = ({ onHomeClick }) =>
   };
 
   return (
-    <div className="change-sensor">
+    <div className="change-machine-part">
       <h1>Change a Machine Part</h1>
-
-      
+      <ChangeMachinePartInput onSubmit={handleFormSubmit} /> {/* Render the form */}
     </div>
   );
 };
 
-export default ChangeSensor;
+export default ChangeMachinePart;

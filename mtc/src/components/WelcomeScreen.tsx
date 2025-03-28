@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './WelcomeScreen.css';
 import ContactUs from './ContactUs';
 import ChangeSensor from './change_sensor/ChangeSensor';
+import ChangeMachinePart from './change_machine_part/ChangeMachinePart'; // Import ChangeMachinePart
 
 interface WelcomeScreenProps {
   onHomeClick: () => void;
@@ -23,7 +24,8 @@ export default function WelcomeScreen({
   onChangeSensorClick,
 }: WelcomeScreenProps) {
   const [showContactUs, setShowContactUs] = useState(false);
-  const [showChangeSensor, setShowChangeSensor] = useState(false); // Add state for ChangeSensor
+  const [showChangeSensor, setShowChangeSensor] = useState(false);
+  const [showChangeMachinePart, setShowChangeMachinePart] = useState(false); // Add state for ChangeMachinePart
 
   const handleContactUsClick = () => {
     setShowContactUs(true);
@@ -31,11 +33,26 @@ export default function WelcomeScreen({
 
   const handleBackClick = () => {
     setShowContactUs(false);
-    setShowChangeSensor(false); // Reset ChangeSensor state when navigating back
+    setShowChangeSensor(false);
+    setShowChangeMachinePart(false); // Reset ChangeMachinePart state when navigating back
+  };
+
+  const handleHomeClick = () => {
+    setShowContactUs(false);
+    setShowChangeSensor(false);
+    setShowChangeMachinePart(false); // Ensure all states are reset to show WelcomeScreen
   };
 
   const handleChangeSensorClick = () => {
-    setShowChangeSensor(true); // Show ChangeSensor component
+    setShowChangeSensor(true);
+  };
+
+  const handleCreateMaintenancePlanClick = () => {
+    setShowChangeMachinePart(true); // Show ChangeMachinePart component
+  };
+
+  const handleChangeMachineComponentClick = () => {
+    setShowChangeMachinePart(true); // Show ChangeMachinePart component
   };
 
   if (showContactUs) {
@@ -43,7 +60,11 @@ export default function WelcomeScreen({
   }
 
   if (showChangeSensor) {
-    return <ChangeSensor onHomeClick={handleBackClick} />; // Render ChangeSensor component
+    return <ChangeSensor onHomeClick={handleHomeClick} />; // Pass handleHomeClick to ChangeSensor
+  }
+
+  if (showChangeMachinePart) {
+    return <ChangeMachinePart onHomeClick={handleHomeClick} />; // Pass handleHomeClick to ChangeMachinePart
   }
 
   return (
@@ -58,11 +79,11 @@ export default function WelcomeScreen({
         <button onClick={onOptimizeMachineDataClick}>Add Machine Data</button>
       </div>
       <div className="button-container">
-        <button onClick={handleChangeSensorClick}>Change a Sensor</button> {/* Update button to use local handler */}
-        <button onClick={onCreateMaintenancePlanClick}>Create a Maintenance Plan</button>
+        <button onClick={handleChangeSensorClick}>Change a Sensor</button>
+        <button onClick={handleCreateMaintenancePlanClick}>Create a Maintenance Plan</button> {/* Update button to use local handler */}
       </div>
       <div className="button-container">
-        <button>Change a Machine Component</button>
+        <button onClick={handleChangeMachineComponentClick}>Change a Machine Component</button> {/* Update button to use local handler */}
         <button onClick={handleContactUsClick}>Contact Us</button>
       </div>
     </div>
