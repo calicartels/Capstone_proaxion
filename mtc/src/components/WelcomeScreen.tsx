@@ -80,10 +80,11 @@ export default function WelcomeScreen({
       </div>
       <div className="button-container">
         <button onClick={handleChangeSensorClick}>Change a Sensor</button>
-        <button onClick={handleCreateMaintenancePlanClick}>Create a Maintenance Plan</button> {/* Update button to use local handler */}
+        <button onClick={handleChangeMachineComponentClick}>Change a Machine Component</button>
+        
       </div>
       <div className="button-container">
-        <button onClick={handleChangeMachineComponentClick}>Change a Machine Component</button> {/* Update button to use local handler */}
+      <button onClick={handleCreateMaintenancePlanClick}>Create a Maintenance Plan</button>
         <button onClick={handleContactUsClick}>Contact Us</button>
       </div>
     </div>
