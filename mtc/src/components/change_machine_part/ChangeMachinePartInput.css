@@ -14,10 +14,11 @@
 }
 
 .button-container {
-  display: flex;
-  justify-content: center; /* Center the buttons */
-  gap: 1rem; /* Reduce the gap between buttons */
+  display: flex; /* Ensure buttons are displayed in a row */
+  justify-content: center; /* Center align the buttons horizontally */
+  gap: 1rem; /* Add spacing between the buttons */
   padding: 1rem;
+  flex-wrap: nowrap; /* Prevent buttons from wrapping to the next line */
 }
 
 .change-machine-part-input .button-container button {

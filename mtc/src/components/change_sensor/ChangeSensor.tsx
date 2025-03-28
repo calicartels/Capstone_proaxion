@@ -15,7 +15,6 @@ const ChangeSensor: React.FC<ChangeSensorProps> = ({ onHomeClick }) => {
     <div className="change-sensor">
       <h1>Change a Sensor</h1>
       <ChangeSensorInputs onSubmit={handleFormSubmit} />
-      
     </div>
   );
 };
