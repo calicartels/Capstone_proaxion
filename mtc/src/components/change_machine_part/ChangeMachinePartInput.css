@@ -40,3 +40,12 @@
 .question-container h2 {
   margin-bottom: 0.5rem; /* Add spacing between h2 and the input */
 }
+
+.change-machine-part-input input[type="text"] {
+  height: 2.5rem; /* Match the height of MTCInput text input boxes */
+  padding: 0.5rem; /* Add padding for better appearance */
+  font-size: 1rem; /* Ensure consistent font size */
+  border: 1px solid #ccc; /* Add a border for consistency */
+  border-radius: 4px; /* Add rounded corners for a modern look */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
