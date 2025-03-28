@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './ChangeMachinePartInput.css'; // Import the CSS file
 
 interface ChangeMachinePartInputProps {
   onSubmit: (formData: Record<string, string>) => void;
@@ -46,9 +47,9 @@ const ChangeMachinePartInput: React.FC<ChangeMachinePartInputProps> = ({ onSubmi
 
   return (
     <div className="change-machine-part-input">
-      <form>
-        <label>
-          {currentQuestion.label}
+      <form className="form-container">
+        <div className="question-container"> {/* Wrap h2 and input in a container */}
+          <h2>{currentQuestion.label}</h2> {/* Display question text */}
           {currentQuestion.type === 'select' ? (
             <select
               name={currentQuestion.name}
@@ -67,9 +68,9 @@ const ChangeMachinePartInput: React.FC<ChangeMachinePartInputProps> = ({ onSubmi
               onChange={handleChange}
             />
           )}
-        </label>
+        </div>
       </form>
-      <div className="button-container"> {/* Add a container for buttons */}
+      <div className="button-container"> {/* Buttons at the bottom */}
         <button type="button" onClick={handleBack}>
           {currentQuestionIndex === 0 ? 'Home' : 'Back'}
         </button>

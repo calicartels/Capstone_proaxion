@@ -14,7 +14,7 @@ const ChangeMachinePart: React.FC<ChangeMachinePartProps> = ({ onHomeClick }) =>
   return (
     <div className="change-machine-part">
       <h1>Change a Machine Part</h1>
-      <ChangeMachinePartInput onSubmit={handleFormSubmit} /> {/* Render the form */}
+      <ChangeMachinePartInput onSubmit={handleFormSubmit} onHomeClick={onHomeClick} /> {/* Pass onHomeClick */}
     </div>
   );
 };

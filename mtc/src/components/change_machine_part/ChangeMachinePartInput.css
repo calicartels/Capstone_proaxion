@@ -1,0 +1,42 @@
+.change-machine-part-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh; /* Full height to push buttons to the bottom */
+}
+
+.form-container {
+  flex-grow: 1; /* Allow the form to take up remaining space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Center the buttons */
+  gap: 1rem; /* Reduce the gap between buttons */
+  padding: 1rem;
+}
+
+.change-machine-part-input .button-container button {
+  width: auto; /* Allow buttons to size dynamically based on their content */
+  padding: 0.5rem 1rem; /* Add padding for better appearance */
+  text-align: center;
+}
+
+.change-machine-part-input select {
+  width: 50%; /* Reduce the width to half */
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column; /* Stack h2 and input vertically */
+  align-items: center; /* Center-align the content */
+  margin-bottom: 1rem; /* Add spacing below the question */
+}
+
+.question-container h2 {
+  margin-bottom: 0.5rem; /* Add spacing between h2 and the input */
+}
