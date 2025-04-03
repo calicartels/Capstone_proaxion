@@ -1,0 +1,365 @@
+/* BeltDrivenFanMonitoring.css */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px;
+    background-color: #f9fafb;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+  }
+  
+  .title {
+    font-size: 24px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 16px;
+  }
+  
+  .panel {
+    background-color: white;
+    padding: 24px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 32px;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .visualization {
+    position: relative;
+    width: 100%;
+    height: 256px;
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    border: 1px solid #d1d5db;
+    margin-bottom: 16px;
+  }
+  
+  /* Fan */
+  .fan {
+    position: absolute;
+    top: 48px;
+    left: 48px;
+    width: 128px;
+    height: 128px;
+    background-color: #d1d5db;
+    border-top-left-radius: 64px;
+    border-bottom-left-radius: 64px;
+  }
+  
+  .fan-inner {
+    position: absolute;
+    top: 56px;
+    left: 64px;
+    width: 96px;
+    height: 96px;
+    background-color: #4b5563;
+    border-radius: 50%;
+  }
+  
+  .fan-hub {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 64px;
+    height: 64px;
+    background-color: #9ca3af;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .fan-center {
+    width: 24px;
+    height: 24px;
+    background-color: #1f2937;
+    border-radius: 50%;
+  }
+  
+  /* Fan housing */
+  .fan-housing {
+    position: absolute;
+    top: 16px;
+    left: 16px;
+    width: 192px;
+    height: 192px;
+    border: 8px solid #9ca3af;
+    border-top-left-radius: 96px;
+    border-bottom-left-radius: 96px;
+  }
+  
+  /* Motor */
+  .motor {
+    position: absolute;
+    top: 48px;
+    left: 256px;
+    width: 128px;
+    height: 128px;
+    background-color: #9ca3af;
+    border-radius: 4px;
+  }
+  
+  .motor-detail {
+    position: absolute;
+    left: 16px;
+    width: 96px;
+    height: 16px;
+    background-color: #4b5563;
+  }
+  
+  .motor-detail.top {
+    top: 56px;
+  }
+  
+  .motor-detail.middle {
+    top: 88px;
+  }
+  
+  .motor-detail.bottom {
+    top: 120px;
+  }
+  
+  /* Motor shaft */
+  .motor-shaft {
+    position: absolute;
+    top: 112px;
+    left: 216px;
+    width: 64px;
+    height: 32px;
+    background-color: #6b7280;
+  }
+  
+  /* Fan shaft */
+  .fan-shaft {
+    position: absolute;
+    top: 112px;
+    left: 144px;
+    width: 64px;
+    height: 32px;
+    background-color: #6b7280;
+  }
+  
+  /* Belt */
+  .belt-circle {
+    position: absolute;
+    top: 80px;
+    width: 64px;
+    height: 128px;
+    border: 4px solid #111827;
+    border-radius: 50%;
+  }
+  
+  .belt-circle.left {
+    left: 208px;
+  }
+  
+  .belt-circle.right {
+    left: 272px;
+  }
+  
+  .belt-straight {
+    position: absolute;
+    left: 208px;
+    width: 128px;
+    height: 16px;
+    background-color: #111827;
+  }
+  
+  .belt-straight.top {
+    top: 64px;
+  }
+  
+  .belt-straight.bottom {
+    top: 208px;
+  }
+  
+  /* Sensors */
+  .sensor {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 2px solid #1f2937;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+  
+  .sensor:hover {
+    transform: scale(1.1);
+  }
+  
+  .sensor-label {
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+  }
+  
+  /* Legend */
+  .legend {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+  }
+  
+  .legend-item {
+    display: flex;
+    align-items: center;
+  }
+  
+  .legend-color {
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .legend-color.normal {
+    background-color: green;
+  }
+  
+  .legend-color.warning {
+    background-color: orange;
+  }
+  
+  .legend-color.alert {
+    background-color: red;
+  }
+  
+  /* Details panel */
+  .details-panel {
+    background-color: #f3f4f6;
+    border-radius: 8px;
+    padding: 16px;
+  }
+  
+  .details-panel.empty {
+    text-align: center;
+    color: #6b7280;
+  }
+  
+  .details-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 8px;
+  }
+  
+  .details-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1f2937;
+    margin: 0;
+  }
+  
+  .status-badge {
+    padding: 4px 8px;
+    border-radius: 16px;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+  }
+  
+  .status-badge.normal {
+    background-color: green;
+  }
+  
+  .status-badge.warning {
+    background-color: orange;
+  }
+  
+  .status-badge.alert {
+    background-color: red;
+  }
+  
+  .details-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+  
+  .details-item {
+    font-size: 14px;
+  }
+  
+  .details-label {
+    font-weight: 600;
+  }
+  
+  .details-message {
+    color: #4b5563;
+    margin-bottom: 16px;
+  }
+  
+  .issues-container {
+    margin-bottom: 16px;
+  }
+  
+  .issues-title {
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 8px;
+  }
+  
+  .issues-list {
+    list-style-type: disc;
+    padding-left: 20px;
+  }
+  
+  .issue-item {
+    color: #4b5563;
+    margin-bottom: 4px;
+  }
+  
+  .close-button {
+    margin-top: 16px;
+    background-color: #2563eb;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .close-button:hover {
+    background-color: #1d4ed8;
+  }
+  
+  /* Machine info section */
+  .machine-info {
+    margin-top: 0;
+  }
+  
+  .section-title {
+    font-size: 18px;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 12px;
+  }
+  
+  .info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  
+  .info-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+  
+  .info-list {
+    list-style-type: disc;
+    padding-left: 20px;
+    color: #4b5563;
+  }
+  
+  .info-list li {
+    margin-bottom: 4px;
+  }
