@@ -1,0 +1,52 @@
+.change-machine-part-input {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 80vh; /* Full height to push buttons to the bottom */
+}
+
+.form-container {
+  flex-grow: 1; /* Allow the form to take up remaining space */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.button-container {
+  display: flex; /* Ensure buttons are displayed in a row */
+  justify-content: center; /* Center align the buttons horizontally */
+  gap: 1rem; /* Add spacing between the buttons */
+  padding: 1rem;
+  flex-wrap: nowrap; /* Prevent buttons from wrapping to the next line */
+}
+
+.change-machine-part-input .button-container button {
+  width: auto; /* Allow buttons to size dynamically based on their content */
+  padding: 0.5rem 1rem; /* Add padding for better appearance */
+  text-align: center;
+}
+
+.change-machine-part-input select {
+  width: 50%; /* Reduce the width to half */
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column; /* Stack h2 and input vertically */
+  align-items: center; /* Center-align the content */
+  margin-bottom: 1rem; /* Add spacing below the question */
+}
+
+.question-container h2 {
+  margin-bottom: 0.5rem; /* Add spacing between h2 and the input */
+}
+
+.change-machine-part-input input[type="text"] {
+  height: 2.5rem; /* Match the height of MTCInput text input boxes */
+  padding: 0.5rem; /* Add padding for better appearance */
+  font-size: 1rem; /* Ensure consistent font size */
+  border: 1px solid #ccc; /* Add a border for consistency */
+  border-radius: 4px; /* Add rounded corners for a modern look */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}

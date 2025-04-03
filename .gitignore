@@ -1,1 +1,5 @@
+credentials/
+settings.py
+venv/
 .venv/
+/__pycache__

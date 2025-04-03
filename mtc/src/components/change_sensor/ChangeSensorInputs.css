@@ -1,0 +1,44 @@
+.change-sensor-inputs {
+  display: flex;
+  flex-direction: column;
+  height: 80vh;
+}
+
+/* Only apply vertical centering to non-navigation divs */
+.change-sensor-inputs > div:not(.navigation-buttons) {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-buttons {
+  display: flex;            /* Display as flex container */
+  flex-direction: row;      /* Force horizontal alignment */
+  justify-content: center;  /* Center align the buttons */
+  align-items: center;      /* Vertically center buttons */
+  gap: 1rem;                /* Spacing between buttons */
+  margin-top: 20px;         /* Spacing above buttons */
+  flex-wrap: nowrap;        /* Prevent wrapping */
+  /* Removed width: 100% to avoid unintended stretching */
+}
+
+.navigation-buttons button {
+  flex: 0 0 auto;           /* Prevent buttons from stretching */
+  padding: 10px 20px; /* Adjust padding for consistent button size */
+  font-size: 16px; /* Ensure consistent font size */
+}
+
+.change-sensor-inputs select {
+  width: 25%; /* Set select boxes to half the width of their container */
+}
+
+.change-sensor-inputs input[type="text"] {
+  height: 2.5rem; /* Match the height of ChangeMachinePartInput text input boxes */
+  padding: 0.5rem; /* Add padding for better appearance */
+  font-size: 1rem; /* Ensure consistent font size */
+  border: 1px solid #ccc; /* Add a border for consistency */
+  border-radius: 4px; /* Add rounded corners for a modern look */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
