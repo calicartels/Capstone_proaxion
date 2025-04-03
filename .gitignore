@@ -1,5 +1,5 @@
 credentials/
 settings.py
-venv/
 .venv/
-/__pycache__
+venv/
+__pycache__/
