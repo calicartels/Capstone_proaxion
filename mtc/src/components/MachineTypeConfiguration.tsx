@@ -13,6 +13,7 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
   const [activeButton, setActiveButton] = useState<string | null>(null);
   const [horsepower, setHorsepower] = useState<string>("");
   const [installationMethod, setInstallationMethod] = useState<string>("");
+  const [fanOverhung, setFanOverhung] = useState<string>(""); // New state for Fan Overhung
 
   const handleNextClick = () => {
     setActiveButton('next');
@@ -63,6 +64,17 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
           />
         )}
         {step === 3 && (
+          <MTCInput 
+            title="Is the Fan Overhung?" 
+            options={[
+              { value: 'yes', label: 'Yes' },
+              { value: 'no', label: 'No' }
+            ]}
+            value={fanOverhung}
+            onChange={(e) => setFanOverhung(e.target.value)}
+          />
+        )}
+        {step === 4 && (
           <div className="horsepower-input-container">
             <h2>Horsepower</h2>
             <input 
@@ -75,7 +87,7 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
             />
           </div>
         )}
-        {step === 4 && (
+        {step === 5 && (
           <MTCInput
             title="Installation Method"
             options={installationOptions}
@@ -83,7 +95,7 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
             onChange={(e) => setInstallationMethod(e.target.value)}
           />
         )}
-        {step === 5 && (
+        {step === 6 && (
           <div className="instructions-chatbot-container">
             <div className="instructions">
               <MTCInstructions />
@@ -109,7 +121,7 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
               Back
             </button>
           )}
-          {step < 5 ? (
+          {step < 6 ? (
             <button 
               onClick={handleNextClick} 
               className={activeButton === 'next' ? 'active' : ''}
