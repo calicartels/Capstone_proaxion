@@ -11,9 +11,11 @@ interface MachineTypeConfigurationProps {
 function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps) {
   const [step, setStep] = useState(1);
   const [activeButton, setActiveButton] = useState<string | null>(null);
+  const [machineType, setMachineType] = useState<string>(""); // New state for Type of Machine
+  const [powerTransmission, setPowerTransmission] = useState<string>(""); // Capture Power Transmission
+  const [fanOverhung, setFanOverhung] = useState<string>(""); // Already present
   const [horsepower, setHorsepower] = useState<string>("");
   const [installationMethod, setInstallationMethod] = useState<string>("");
-  const [fanOverhung, setFanOverhung] = useState<string>(""); // New state for Fan Overhung
 
   const handleNextClick = () => {
     setActiveButton('next');
@@ -55,12 +57,16 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
           <MTCInput 
             title="Type of Machine" 
             options={step1Options} 
+            value={machineType}
+            onChange={(e) => setMachineType(e.target.value)}
           />
         )}
         {step === 2 && (
           <MTCInput 
             title="Power Transmission" 
             options={step2Options} 
+            value={powerTransmission}
+            onChange={(e) => setPowerTransmission(e.target.value)}
           />
         )}
         {step === 3 && (
@@ -98,7 +104,15 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
         {step === 6 && (
           <div className="instructions-chatbot-container">
             <div className="instructions">
-              <MTCInstructions />
+              <MTCInstructions 
+                userSelections={{
+                  machineType,
+                  powerTransmission,
+                  fanOverhung,
+                  horsepower,
+                  installationMethod
+                }}
+              />
             </div>
             <div className="chatbot">
               <ChatBot />

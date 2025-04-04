@@ -11,9 +11,22 @@ interface InstructionContent {
 interface InstructionPage {
   title: string;
   content: InstructionContent[];
+  image?: string;
 }
 
-const MTCInstructions: React.FC = () => {
+interface UserSelections {
+  machineType: string;
+  powerTransmission: string;
+  fanOverhung: string;
+  horsepower: string;
+  installationMethod: string;
+}
+
+interface MTCInstructionsProps {
+  userSelections?: UserSelections;
+}
+
+const MTCInstructions: React.FC<MTCInstructionsProps> = ({ userSelections }) => {
   const [instructions, setInstructions] = useState<any[]>([]);
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -39,15 +52,18 @@ const MTCInstructions: React.FC = () => {
     <div className="instructions-container">
       {instructions.length > 0 && (
         <>
-          {/* Pass currentPage as pageIndex */}
-          <MTCInstructionSteps instruction={instructions[currentPage]} pageIndex={currentPage} />
+          {/* Pass currentPage and userSelections as props */}
+          <MTCInstructionSteps 
+            instruction={instructions[currentPage]} 
+            pageIndex={currentPage} 
+            userSelections={userSelections}
+          />
           <div className="instructions-navigation">
             {currentPage > 0 ? (
               <button onClick={handleBack} className="nav-button back">
                 Previous Step
               </button>
             ) : (
-              // Render an empty placeholder so spacing stays consistent
               <div className="nav-button-placeholder" />
             )}
             <div className="see-video-button-container">
@@ -77,7 +93,6 @@ const MTCInstructions: React.FC = () => {
                 Next Step
               </button>
             ) : (
-              // Render an empty placeholder if needed
               <div className="nav-button-placeholder" />
             )}
           </div>

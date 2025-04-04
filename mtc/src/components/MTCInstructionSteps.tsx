@@ -12,12 +12,21 @@ interface InstructionPage {
   image?: string;
 }
 
+interface UserSelections {
+  machineType: string;
+  powerTransmission: string;
+  fanOverhung: string;
+  horsepower: string;
+  installationMethod: string;
+}
+
 interface MTCInstructionStepsProps {
   instruction: InstructionPage;
   pageIndex: number;
+  userSelections?: UserSelections;
 }
 
-const MTCInstructionSteps: React.FC<MTCInstructionStepsProps> = ({ instruction, pageIndex }) => {
+const MTCInstructionSteps: React.FC<MTCInstructionStepsProps> = ({ instruction, pageIndex, userSelections }) => {
   return (
     <div className="mtc-instructions">
       <h2>{instruction.title}</h2>
