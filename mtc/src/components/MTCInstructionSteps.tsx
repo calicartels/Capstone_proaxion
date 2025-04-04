@@ -20,10 +20,10 @@ const MTCInstructionSteps: React.FC<MTCInstructionStepsProps> = ({ instruction, 
   return (
     <div className="mtc-instructions">
       <h2>{instruction.title}</h2>
-      {pageIndex >= 1 && pageIndex <= 7 && (
+      {pageIndex >= 2 && pageIndex <= 8 && (
         <div className="instruction-step-image-container">
           <img 
-            src={`/assets/dat_step${pageIndex}.png`} 
+            src={`/assets/dat_step${pageIndex - 1}.png`} 
             alt={`Step ${pageIndex} illustration`} 
             className="instruction-step-image" 
           />

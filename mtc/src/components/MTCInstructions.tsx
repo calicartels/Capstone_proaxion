@@ -51,19 +51,19 @@ const MTCInstructions: React.FC = () => {
               <div className="nav-button-placeholder" />
             )}
             <div className="see-video-button-container">
-              {currentPage >= 2 && currentPage <= 6 && (
+              {currentPage >= 3 && currentPage <= 7 && (
                 <button 
                   className="nav-button video"
                   onClick={() => {
-                    if (currentPage === 2) {
+                    if (currentPage === 3) {
                       window.open("https://youtu.be/t2r8st6eWiM?si=wRbScKp5cZwLqC1i&t=3", "_blank");
-                    } else if (currentPage === 3) {
-                      window.open("https://youtu.be/t2r8st6eWiM?si=5qfMCCApgeiv34Js&t=39", "_blank");
                     } else if (currentPage === 4) {
-                      window.open("https://youtu.be/t2r8st6eWiM?si=5qfMCCApgeiv34Js&t=66", "_blank");
+                      window.open("https://youtu.be/t2r8st6eWiM?si=5qfMCCApgeiv34Js&t=39", "_blank");
                     } else if (currentPage === 5) {
-                      window.open("https://youtu.be/t2r8st6eWiM?si=BkF3zjolGGukubgY&t=48", "_blank");
+                      window.open("https://youtu.be/t2r8st6eWiM?si=5qfMCCApgeiv34Js&t=66", "_blank");
                     } else if (currentPage === 6) {
+                      window.open("https://youtu.be/t2r8st6eWiM?si=BkF3zjolGGukubgY&t=48", "_blank");
+                    } else if (currentPage === 7) {
                       window.open("https://youtu.be/t2r8st6eWiM?si=5qfMCCApgeiv34Js&t=77", "_blank");
                     }
                   }}
