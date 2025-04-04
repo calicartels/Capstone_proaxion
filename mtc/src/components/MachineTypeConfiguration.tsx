@@ -11,6 +11,9 @@ interface MachineTypeConfigurationProps {
 function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps) {
   const [step, setStep] = useState(1);
   const [activeButton, setActiveButton] = useState<string | null>(null);
+  const [machineType, setMachineType] = useState<string>(""); // New state for Type of Machine
+  const [powerTransmission, setPowerTransmission] = useState<string>(""); // Capture Power Transmission
+  const [fanOverhung, setFanOverhung] = useState<string>(""); // Already present
   const [horsepower, setHorsepower] = useState<string>("");
   const [installationMethod, setInstallationMethod] = useState<string>("");
 
@@ -54,15 +57,30 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
           <MTCInput 
             title="Type of Machine" 
             options={step1Options} 
+            value={machineType}
+            onChange={(e) => setMachineType(e.target.value)}
           />
         )}
         {step === 2 && (
           <MTCInput 
             title="Power Transmission" 
             options={step2Options} 
+            value={powerTransmission}
+            onChange={(e) => setPowerTransmission(e.target.value)}
           />
         )}
         {step === 3 && (
+          <MTCInput 
+            title="Is the Fan Overhung?" 
+            options={[
+              { value: 'no', label: 'No' },
+              { value: 'yes', label: 'Yes' }
+            ]}
+            value={fanOverhung}
+            onChange={(e) => setFanOverhung(e.target.value)}
+          />
+        )}
+        {step === 4 && (
           <div className="horsepower-input-container">
             <h2>Horsepower</h2>
             <input 
@@ -75,7 +93,7 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
             />
           </div>
         )}
-        {step === 4 && (
+        {step === 5 && (
           <MTCInput
             title="Installation Method"
             options={installationOptions}
@@ -83,10 +101,18 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
             onChange={(e) => setInstallationMethod(e.target.value)}
           />
         )}
-        {step === 5 && (
+        {step === 6 && (
           <div className="instructions-chatbot-container">
             <div className="instructions">
-              <MTCInstructions />
+              <MTCInstructions 
+                userSelections={{
+                  machineType,
+                  powerTransmission,
+                  fanOverhung,
+                  horsepower,
+                  installationMethod
+                }}
+              />
             </div>
             <div className="chatbot">
               <ChatBot />
@@ -109,7 +135,7 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
               Back
             </button>
           )}
-          {step < 5 ? (
+          {step < 6 ? (
             <button 
               onClick={handleNextClick} 
               className={activeButton === 'next' ? 'active' : ''}

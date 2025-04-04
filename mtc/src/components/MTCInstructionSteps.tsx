@@ -9,21 +9,40 @@ interface InstructionContent {
 interface InstructionPage {
   title: string;
   content: InstructionContent[];
+  image?: string;
+}
+
+interface UserSelections {
+  machineType: string;
+  powerTransmission: string;
+  fanOverhung: string;
+  horsepower: string;
+  installationMethod: string;
 }
 
 interface MTCInstructionStepsProps {
   instruction: InstructionPage;
   pageIndex: number;
+  userSelections?: UserSelections;
 }
 
-const MTCInstructionSteps: React.FC<MTCInstructionStepsProps> = ({ instruction, pageIndex }) => {
+const MTCInstructionSteps: React.FC<MTCInstructionStepsProps> = ({ instruction, pageIndex, userSelections }) => {
   return (
     <div className="mtc-instructions">
       <h2>{instruction.title}</h2>
-      {pageIndex >= 1 && pageIndex <= 7 && (
+      {instruction.title === "Introduction Part 1" && instruction.image && (
+        <div className="instruction-image-container">
+          <img 
+            src={`/assets/${instruction.image}`} 
+            alt="Introduction image" 
+            style={{ height: '225px' }} // Image height set to 225 pixels
+          />
+        </div>
+      )}
+      {pageIndex >= 2 && pageIndex <= 8 && (
         <div className="instruction-step-image-container">
           <img 
-            src={`/assets/dat_step${pageIndex}.png`} 
+            src={`/assets/dat_step${pageIndex - 1}.png`} 
             alt={`Step ${pageIndex} illustration`} 
             className="instruction-step-image" 
           />

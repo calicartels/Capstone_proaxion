@@ -1,13 +1,19 @@
 [
   {
-    "title": "Introduction",
+    "title": "Introduction Part 1",
     "content": [
       {
-        "subtitle": "Parts",
+        "subtitle": "Sensors",
         "text": [
-          "This machine will require 3 or 4 sensors. Each sensor comes with a 316 SS threaded ¼”-28 stud for screwing the sensor into a threaded hole on the machine surface."
+          "This machine will require 4 sensors, with locations labeled above. Each sensor comes with a 316 SS threaded ¼”-28 stud for screwing the sensor into a threaded hole on the machine surface."
         ]
-      },
+      }
+    ],
+    "image": "belt-driven_fan.png"
+  },
+  {
+    "title": "Introduction Part 2",
+    "content": [
       {
         "subtitle": "Machine Surface",
         "text": [
