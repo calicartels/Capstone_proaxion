@@ -67,8 +67,8 @@ function MachineTypeConfiguration({ onHomeClick }: MachineTypeConfigurationProps
           <MTCInput 
             title="Is the Fan Overhung?" 
             options={[
-              { value: 'yes', label: 'Yes' },
-              { value: 'no', label: 'No' }
+              { value: 'no', label: 'No' },
+              { value: 'yes', label: 'Yes' }
             ]}
             value={fanOverhung}
             onChange={(e) => setFanOverhung(e.target.value)}

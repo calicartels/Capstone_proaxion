@@ -9,6 +9,7 @@ interface InstructionContent {
 interface InstructionPage {
   title: string;
   content: InstructionContent[];
+  image?: string;
 }
 
 interface MTCInstructionStepsProps {
@@ -20,6 +21,15 @@ const MTCInstructionSteps: React.FC<MTCInstructionStepsProps> = ({ instruction, 
   return (
     <div className="mtc-instructions">
       <h2>{instruction.title}</h2>
+      {instruction.title === "Introduction Part 1" && instruction.image && (
+        <div className="instruction-image-container">
+          <img 
+            src={`/assets/${instruction.image}`} 
+            alt="Introduction image" 
+            style={{ height: '225px' }} // Image height set to 225 pixels
+          />
+        </div>
+      )}
       {pageIndex >= 2 && pageIndex <= 8 && (
         <div className="instruction-step-image-container">
           <img 
