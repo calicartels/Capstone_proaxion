@@ -4,6 +4,7 @@ import './ChatBot.css';
 import ReactMarkdown from 'react-markdown';
 import { MachineContext } from '../context/MachineContext';
 import { installationSteps } from './VideoPlayer';
+import instructionsData from '../data/instructions.json';
 
 interface Message {
   text: string;
@@ -101,6 +102,52 @@ const ChatBot: React.FC = () => {
     return null;
   };
 
+  // Enhanced function to detect step-specific questions
+  const detectStepQuestion = (message: string): number | null => {
+    const lowercaseMessage = message.toLowerCase();
+    
+    // Check for specific step mentions
+    if (lowercaseMessage.includes('step 1') || lowercaseMessage.includes('first step')) {
+      return 1;
+    } else if (lowercaseMessage.includes('step 2') || lowercaseMessage.includes('second step')) {
+      return 2;
+    } else if (lowercaseMessage.includes('step 3') || lowercaseMessage.includes('third step')) {
+      return 3;
+    } else if (lowercaseMessage.includes('step 4') || lowercaseMessage.includes('fourth step')) {
+      return 4;
+    } else if (lowercaseMessage.includes('step 5') || lowercaseMessage.includes('fifth step')) {
+      return 5;
+    } else if (lowercaseMessage.includes('step 6') || lowercaseMessage.includes('sixth step')) {
+      return 6;
+    } else if (lowercaseMessage.includes('step 7') || lowercaseMessage.includes('seventh step')) {
+      return 7;
+    }
+    
+    // Check for content-based matches
+    for (let i = 1; i < instructionsData.length; i++) {
+      const stepData = instructionsData[i];
+      
+      // Check if question contains keywords from this step
+      for (const section of stepData.content) {
+        const sectionText = section.text.join(' ').toLowerCase();
+        const sectionKeywords = sectionText.split(' ')
+          .filter(word => word.length > 4)  // Only consider longer words as keywords
+          .map(word => word.replace(/[.,?!;:]/g, ''));  // Remove punctuation
+          
+        const matchCount = sectionKeywords.filter(keyword => 
+          lowercaseMessage.includes(keyword)).length;
+          
+        // If question matches several keywords from this step, it's likely about this step
+        if (matchCount >= 3) {
+          return i;
+        }
+      }
+    }
+    
+    // If no specific step is detected, return the current step as context
+    return null;
+  };
+
   const handleSendMessage = async (message: string) => {
     // Add user message to chat
     setMessages((prevMessages) => [
@@ -110,6 +157,9 @@ const ChatBot: React.FC = () => {
     
     // Check for installation intent
     const detectedStep = detectInstallationIntent(message);
+    
+    // Check for step-specific questions
+    const questionStep = detectStepQuestion(message);
   
     if (detectedStep === 0 && message.toLowerCase().includes('help with the installation')) {
       // Starting the installation guide
@@ -140,6 +190,36 @@ const ChatBot: React.FC = () => {
           sender: 'bot'
         },
       ]);
+      
+      return; // Skip API call
+    } else if (questionStep !== null && questionStep < instructionsData.length) {
+      // Answer questions about specific installation steps
+      const stepData = instructionsData[questionStep];
+      
+      // Format a response based on the instruction step data
+      let responseText = `**About ${stepData.title}:**\n\n`;
+      
+      // Add each content section
+      stepData.content.forEach(section => {
+        if (section.subtitle) {
+          responseText += `**${section.subtitle}**\n`;
+        }
+        
+        section.text.forEach(paragraph => {
+          responseText += `${paragraph}\n\n`;
+        });
+      });
+      
+      setMessages((prevMessages) => [
+        ...prevMessages,
+        {
+          text: responseText,
+          sender: 'bot'
+        },
+      ]);
+      
+      // Update the current installation step to match the question
+      setCurrentInstallationStep(questionStep);
       
       return; // Skip API call
     }

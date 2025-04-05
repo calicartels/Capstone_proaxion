@@ -1,10 +1,17 @@
 """
 Entry point for the RAG chatbot system.
+
+This script serves as the main entry point for the ProAxion RAG chatbot system.
+It offers two main functionalities:
+1. Indexing documents from Google Docs for the RAG system
+2. Running the API server for the chatbot
+
+Run with --help for usage information.
 """
 import argparse
-import uvicorn
-from pathlib import Path
 import os
+from pathlib import Path
+import uvicorn
 
 from config.settings import API_HOST, API_PORT, KNOWLEDGE_DOCUMENT_IDS
 from utils.auth import setup_vertex_ai
@@ -13,7 +20,12 @@ from rag.document_store import DocumentStore
 
 
 def ensure_credentials_dir():
-    """Ensure the credentials directory exists."""
+    """
+    Ensure the credentials directory exists.
+    
+    Returns:
+        Path: Path to the credentials directory
+    """
     creds_dir = Path(__file__).parent / "credentials"
     creds_dir.mkdir(exist_ok=True)
     return creds_dir
@@ -22,6 +34,9 @@ def ensure_credentials_dir():
 def index_documents(doc_ids=None):
     """
     Index documents for RAG.
+    
+    Process documents from Google Docs, extract their content,
+    and store them in the document store for retrieval.
     
     Args:
         doc_ids (List[str], optional): Document IDs to index. 
@@ -57,10 +72,15 @@ def index_documents(doc_ids=None):
 
 
 def run_api():
-    """Run the API server."""
+    """
+    Run the API server.
+    
+    Starts the FastAPI server with Uvicorn on the configured host and port.
+    """
     # Import here to avoid circular imports
     from api.app import app
     
+    print(f"Starting API server at http://{API_HOST}:{API_PORT}")
     # Start the server
     uvicorn.run(app, host=API_HOST, port=API_PORT)
 
