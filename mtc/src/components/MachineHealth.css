@@ -5,8 +5,7 @@
   }
   
   
-  /* 更新左右面板的宽度比例 */
-  
+
   /* Left panel takes 60% of width */
   .mh-left-panel {
     flex: 6; /* 60% of the space */

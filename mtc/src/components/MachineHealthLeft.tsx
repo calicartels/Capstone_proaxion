@@ -31,7 +31,7 @@ const MachineHealthLeft: React.FC<MachineHealthLeftProps> = ({
   // Store last submitted sensor ID
   const lastSubmittedId = useRef('');
 
-  const handleImageUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+  const handleImageUpload = async (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
       setSelectedImage(file);
@@ -40,6 +40,63 @@ const MachineHealthLeft: React.FC<MachineHealthLeftProps> = ({
         setImagePreview(reader.result as string);
       };
       reader.readAsDataURL(file);
+
+      const formData = new FormData();
+      formData.append('image', file);
+
+      try {
+   
+        const response = await fetch('http://localhost:5000/api/detect-sensors', {
+          method: 'POST',
+          body: formData
+        });
+
+        if (!response.ok) {
+          throw new Error('Failed to detect sensors');
+        }
+
+        const data = await response.json();
+        let detectedId = '558580230'; 
+        
+        if (data.success && data.detected_sensors.length > 0) {
+        
+          detectedId = data.detected_sensors[0].id;
+        } else {
+          console.log('No sensors detected in the image, using default ID');
+        }
+        
+        setSensorId(detectedId);
+        
+      
+        const newSensor: Sensor = {
+          id: `sensor${sensors.length + 1}`,
+          sensorId: detectedId,
+          position: 'Auto Detected',
+          direction: 'Auto Detected',
+          isAlert: false
+        };
+        
+        setSensors(prev => [...prev, newSensor]);
+        setVisibleSensorId(parseInt(detectedId));
+        await onSubmit();
+        
+      } catch (error) {
+        console.error('Error detecting sensors:', error);
+        const defaultId = '558580230';
+        setSensorId(defaultId);
+        
+        const newSensor: Sensor = {
+          id: `sensor${sensors.length + 1}`,
+          sensorId: defaultId,
+          position: 'Auto Detected',
+          direction: 'Auto Detected',
+          isAlert: false
+        };
+        
+        setSensors(prev => [...prev, newSensor]);
+        setVisibleSensorId(parseInt(defaultId));
+        await onSubmit();
+      }
     }
   };
 

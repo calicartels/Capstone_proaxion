@@ -15,12 +15,12 @@ import ProAxionLogo from './assets/ProAxion-logo.png';
 function App() {
   const [currentScreen, setCurrentScreen] = useState('welcome');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
-  const [selectedMachineType, setSelectedMachineType] = useState<string | null>(null); // 💡 新增
+  const [selectedMachineType, setSelectedMachineType] = useState<string | null>(null);
 
   const handleHomeClick = () => {
     setCurrentScreen('welcome');
     setIsSidebarOpen(false);
-    setSelectedMachineType(null); // 清除选择
+    setSelectedMachineType(null); 
   };
 
   const handleMachineTypeConfigurationClick = () => {
@@ -29,7 +29,7 @@ function App() {
   };
 
   const handleMachineHealthClick = () => {
-    setCurrentScreen('machineSelection'); // 💡 修改为先进入选择界面
+    setCurrentScreen('machineSelection'); 
     setIsSidebarOpen(false);
   };
 
@@ -83,7 +83,7 @@ function App() {
         onContactUsClick={handleContactUsClick}
       />
 
-      {/* 页面内容部分 */}
+      {/*website */}
       {currentScreen === 'welcome' && (
         <WelcomeScreen
           onHomeClick={handleHomeClick}
