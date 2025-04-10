@@ -1,4 +1,4 @@
-# Machine Health Monitoring System Backend
+# Machine Health Monitoring System 
 
 ## Overview
 This is a backend service for a machine health monitoring system, primarily used for processing sensor data, image recognition, and status monitoring.
@@ -11,33 +11,51 @@ This is a backend service for a machine health monitoring system, primarily used
 
 ## Installation Steps
 
-### 1. Install Dependencies
+### Backend Setup
 
 ```bash
-# Create virtual environment
-python -m venv venv
-
-# Activate virtual environment
-# Windows:
-venv\Scripts\activate
-# macOS/Linux:
+cd backend
+python3 -m venv venv
 source venv/bin/activate
-
-# Install dependencies
 pip install -r requirements.txt
-```
-
-### 2. Prepare Model Files
-Place the trained YOLO model file `best.pt` in:
-```
-mtc/backend/model/weights/best.pt
-```
-
-## Start Service
-```bash
 python app.py
 ```
-Service will start at http://localhost:5000
+
+> Make sure to place your YOLOv8 model weights in `backend/model/weights/best.pt`.
+
+---
+
+### Frontend Setup
+
+```bash
+cd mtc
+npm install
+npm run dev
+```
+
+Access the app at: `http://localhost:5173`
+
+---
+
+
+##  Features
+
+###  Frontend (React + TypeScript)
+
+- Split view layout with left-side sensor input and right-side visual diagnostics
+- **Manual or image-based sensor entry**
+- Dynamic sensor preview with ID/location/status
+- Component-specific warnings (bearing wear, misalignment, etc.)
+- Machine type selection page (currently supports "Fan")
+
+###  Backend (Flask + YOLOv8 + EasyOCR)
+
+- `/api/detect-sensors` API accepts image uploads
+- Uses **YOLOv8** to detect sensor areas
+- Uses **EasyOCR** to extract numeric sensor IDs
+- Returns bounding boxes + confidence + extracted IDs
+
+---
 
 ## API Endpoints
 
@@ -77,3 +95,4 @@ System can help users identify machine health issues
 
 ## Future Extensions
 The system supports future database integration for storing sensor historical data, maintenance records, and other information to facilitate data analysis and long-term monitoring.
+
