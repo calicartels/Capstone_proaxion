@@ -8,16 +8,19 @@ import OptimizeMachineData from './components/OptimizeMachineData';
 import CreateMaintenancePlan from './components/create_maintenance_plan/CreateMaintenancePlan';
 import ContactUs from './components/ContactUs';
 import { Sidebar } from './components/Sidebar';
+import MachineSelection from './components/MachineSelection'; // 💡 新增导入
 import './App.css';
-import ProAxionLogo from './assets/ProAxion-logo.png'; // Import the logo
+import ProAxionLogo from './assets/ProAxion-logo.png';
 
 function App() {
   const [currentScreen, setCurrentScreen] = useState('welcome');
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const [selectedMachineType, setSelectedMachineType] = useState<string | null>(null); // 💡 新增
 
   const handleHomeClick = () => {
     setCurrentScreen('welcome');
     setIsSidebarOpen(false);
+    setSelectedMachineType(null); // 清除选择
   };
 
   const handleMachineTypeConfigurationClick = () => {
@@ -26,8 +29,13 @@ function App() {
   };
 
   const handleMachineHealthClick = () => {
-    setCurrentScreen('machineHealth');
+    setCurrentScreen('machineSelection'); // 💡 修改为先进入选择界面
     setIsSidebarOpen(false);
+  };
+
+  const handleMachineSelected = (machineType: string) => {
+    setSelectedMachineType(machineType);
+    setCurrentScreen('machineHealth');
   };
 
   const handleEnhanceSensorInstallsClick = () => {
@@ -59,21 +67,23 @@ function App() {
       <header className="header">
         <img src={ProAxionLogo} alt="ProAxion Logo" className="proaxion-logo" />
       </header>
-      { !isSidebarOpen && (
+      {!isSidebarOpen && (
         <button className="hamburger-button" onClick={toggleSidebar}>
           <FaBars />
         </button>
       )}
       <Sidebar 
-         isOpen={isSidebarOpen} 
-         onClose={toggleSidebar}
-         onHomeClick={handleHomeClick}
-         onMachineTypeConfigurationClick={handleMachineTypeConfigurationClick}
-         onMachineHealthClick={handleMachineHealthClick}
-         onEnhanceSensorInstallsClick={handleEnhanceSensorInstallsClick}
-         onOptimizeMachineDataClick={handleOptimizeMachineDataClick}
-         onContactUsClick={handleContactUsClick}
+        isOpen={isSidebarOpen} 
+        onClose={toggleSidebar}
+        onHomeClick={handleHomeClick}
+        onMachineTypeConfigurationClick={handleMachineTypeConfigurationClick}
+        onMachineHealthClick={handleMachineHealthClick}
+        onEnhanceSensorInstallsClick={handleEnhanceSensorInstallsClick}
+        onOptimizeMachineDataClick={handleOptimizeMachineDataClick}
+        onContactUsClick={handleContactUsClick}
       />
+
+      {/* 页面内容部分 */}
       {currentScreen === 'welcome' && (
         <WelcomeScreen
           onHomeClick={handleHomeClick}
@@ -81,28 +91,40 @@ function App() {
           onMachineHealthClick={handleMachineHealthClick}
           onEnhanceSensorInstallsClick={handleEnhanceSensorInstallsClick}
           onOptimizeMachineDataClick={handleOptimizeMachineDataClick}
-          onCreateMaintenancePlanClick={handleCreateMaintenancePlanClick} // Pass the new handler
+          onCreateMaintenancePlanClick={handleCreateMaintenancePlanClick}
         />
       )}
+
+      {currentScreen === 'machineSelection' && (
+        <MachineSelection 
+          onMachineSelected={handleMachineSelected} 
+          onHomeClick={handleHomeClick}
+        />
+      )}
+
+      {currentScreen === 'machineHealth' && selectedMachineType === 'fan' && (
+        <MachineHealth onHomeClick={handleHomeClick} />
+      )}
+
       {currentScreen === 'machineTypeConfiguration' && (
         <MachineTypeConfiguration onHomeClick={handleHomeClick} />
       )}
-      {currentScreen === 'machineHealth' && (
-        <MachineHealth onHomeClick={handleHomeClick} />
-      )}
+
       {currentScreen === 'enhanceSensorInstalls' && (
         <EnhanceSensorInstalls onHomeClick={handleHomeClick} />
       )}
+
       {currentScreen === 'optimizeMachineData' && (
         <OptimizeMachineData onHomeClick={handleHomeClick} />
       )}
+
       {currentScreen === 'createMaintenancePlan' && (
         <CreateMaintenancePlan onHomeClick={handleHomeClick} />
       )}
+
       {currentScreen === 'contact' && <ContactUs onBackClick={handleHomeClick} />}
     </div>
   );
 }
 
 export default App;
-
