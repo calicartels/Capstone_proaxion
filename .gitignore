@@ -1,3 +1,14 @@
+# macOS
+.DS_Store
+
+# Node
+node_modules/
+
+# IDE specific
+.vscode/
+
+# Add other project-specific ignores below
+
 credentials/
 settings.py
 

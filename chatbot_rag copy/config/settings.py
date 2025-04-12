@@ -40,7 +40,7 @@ GCS_PREFIX = "sample/Videos"
 # API Settings
 API_HOST = os.environ.get("API_HOST", "0.0.0.0")
 API_PORT = int(os.environ.get("API_PORT", 8000))
-CORS_ORIGINS = os.environ.get("CORS_ORIGINS", "http://localhost:3000,http://localhost:5173").split(",")
+CORS_ORIGINS = os.environ.get("CORS_ORIGINS", "http://localhost:3000,http://localhost:5173,http://localhost:5174").split(",")
 
 # RAG settings
 MAX_CONTEXT_LENGTH = 4000  # Maximum number of tokens for context
