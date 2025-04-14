@@ -10,7 +10,7 @@ const questions = [
   { name: 'changingComponent', label: 'Are you changing a machine component (e.g., motor, pump, gearbox)?', type: 'select' },
   { name: 'sameSensor', label: 'If it’s a new component, are you using the same sensor?', type: 'select' },
   { name: 'componentPartNumber', label: 'What is the component and part number?', type: 'text' },
-  { name: 'sensorID', label: 'What is the sensor ID? (Scan the QR code)', type: 'text' },
+  { name: 'sensorID', label: 'What is the sensor ID?', type: 'text' },
   { name: 'installNewSensor', label: 'Do you know how to install the new sensor?', type: 'select' },
   { name: 'picturesInstalledSensor', label: 'Can you provide pictures of the installed sensor, showing it is already installed?', type: 'select' },
   { name: 'newSensorID', label: 'If it is a new sensor, what is the new sensor ID?', type: 'text' },
