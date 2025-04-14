@@ -58,7 +58,7 @@ const ChangeSensorInputs: React.FC<ChangeSensorInputsProps> = ({ onSubmit }) => 
       ),
     },
     {
-      label: 'What is the new sensor ID? (Scan the QR code)',
+      label: 'What is the new sensor ID?',
       input: (
         <input
           type="text"
